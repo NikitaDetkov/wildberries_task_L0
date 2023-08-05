@@ -1,0 +1,40 @@
+@media(max-width: 900px) {
+    
+    .mobile-none {
+        display: none;
+    }
+
+    .desktop-none {
+        display: flex;
+    }
+
+    header {
+        height: 56px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .text-logo {
+        max-width: max-content;
+    }
+
+    .content-container {
+        flex-direction: column;
+        padding: 0px 16px 0px 16px;
+    }
+
+    .left-item {
+        width: 100%;
+    }
+
+    .new-price .price-number {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0px;
+    }
+
+    .right-item {
+        width: calc(100% - 48px);
+        background-color: rgba(246, 246, 250, 1);
+    }
+}

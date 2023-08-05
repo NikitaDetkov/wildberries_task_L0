@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgba(103, 37, 168, 1);
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0px;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.d-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.j-c-space-between {
+    justify-content: space-between;
+}
+
+.horizon-center {
+    justify-content: center;
+}
+
+.vertical-center{
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.checkbox+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+
+.checkbox+label:hover {
+    cursor: pointer;
+}
+
+.checkbox+label::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 6px;
+    margin-right: 12px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.checkbox:checked+label::before {
+    border-color: rgba(203, 17, 171, 1);
+    background-color: rgba(203, 17, 171, 1);
+    background-image: url('../images/check.svg');
+}
+
+.gap-6 {
+    gap: 6px;
+}
+
+.gap-24 {
+    gap: 24px;
+}
+
+.mt-3 {
+    margin-top: 3px;
+}
+
+.mb-16 {
+    margin-bottom: 16px;
+}
+
+.mb-8 {
+    margin-bottom: 8px;
+}
+
+.mr-8 {
+    margin-right: 8px !important;
+}
+
+.ml-4 {
+    margin-left: 4px;
+}
+
+.icon-28-28 {
+    height: 28px;
+    width: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-22-22 {
+    height: 22px;
+    width: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-20-20 {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-12-16 {
+    height: 16px;
+    width: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+h2 {
+    font-weight: 700px;
+    font-size: 28px;
+    line-height: 36px;
+}
+
+h3 {
+    font-weight: 700px;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.01em;
+}
+
+h4 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0px;
+}
+
+.color-black {
+    color: black !important;
+}
+
+.desktop-none {
+    display: none;
+}
+
+.navbar-lower {
+    height: 56px;
+    align-items: center;
+    padding: 0px 13px 0px 13px;
+    justify-content: space-between;
+    background-color: white;
+}

@@ -1,0 +1,375 @@
+.content {
+    border-radius: 24px;
+    background-color: rgba(246, 246, 250, 1);
+    display: flex;
+}
+
+.content-container {
+    margin-top: 34px;
+    margin-bottom: 34px;
+    display: flex;
+    width: 100%;
+    padding: 0px 24px 16px 24px;
+    gap: 32px;
+}
+
+.content-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.left-item {
+    gap: 27px;
+    width: 70%;
+}
+
+.basket {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.basket-elem {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    font-size: 16px;
+    line-height: 24px;
+    color: black;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+}
+
+.list-products {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-top:1px solid rgba(0, 0, 0, 0.1);
+}
+
+.product {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-left-elem {
+    display: flex;
+    padding-top: 12px;
+    gap: 16px;
+
+    width: 397px;
+}
+
+.product-image-box {
+    display: flex;
+}
+
+.product-image {
+    border-radius: 8px;
+    height: 96px;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.product-info-detail {
+    display: flex;
+    gap: 16px;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.product-info-market {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 13px;
+    line-height: 16px;
+    color: rgba(151, 151, 175, 1);
+}
+
+.letter-i {
+    font-size: 16px;
+}
+
+.product-right-elem {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 9px;
+    width: 226px;
+    gap: 16px;
+}
+
+.quantity-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 3px;
+}
+
+.counter {
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    width: 100px;
+    height: 44px;
+    position: relative;
+}
+
+.counter-box-btn {
+    position: absolute;
+    background-color: white;
+    border: 0;
+    width: 24px;
+    height: 24px;
+}
+
+.counter-box-btn:hover {
+    cursor: pointer;
+}
+
+.counter-box-minus {
+    top: 10px;
+    left: 4px;
+    padding: 2px 7px 6px 8px;
+}
+
+.counter-box-plus {
+    top: 10px;
+    left: 73px;
+    padding: 2px 7px 6px 8px;
+}
+
+.counter-box-elem {
+    width: 9px;
+    height: 16px;
+    top: 2px;
+    left: 8px;
+
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.01em;
+    text-align: center;
+}
+
+.counter-value-box {
+    position: absolute;
+    top: 8px;
+    left: 28px;
+}
+
+.counter-value {
+    border: 0;
+    background-color: white;
+    width: 44px;
+    height: 23;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 400;
+    color: black;
+}
+
+.limiter {
+    font-size: 13px;
+    line-height: 16px;
+    color: rgba(255, 59, 48, 1);
+}
+
+.icons-container {
+    display: flex;
+    justify-content: end;
+    gap: 16px;
+}
+
+.price-container {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    align-items: end;
+}
+
+.new-price {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.new-price .price-number {
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.01em;  
+}
+
+.old-price {
+    font-size: 13px;
+    line-height: 16px;
+    color: rgba(151, 151, 175, 1);
+    width: max-content;
+    border-bottom: 2px dashed rgba(0, 0, 0, 0.2);
+    text-decoration: 1.5px line-through solid rgba(160, 160, 164, 1);
+}
+
+.missing-products {
+    color: rgba(151, 151, 175, 1);
+}
+
+.icons-container-not-active {
+    padding-top: 3px;
+    justify-content: right;
+    width: 100px;
+}
+
+.registration-elem {
+    background-color: white;
+    padding: 16px 24px 24px 24px; 
+    border-radius: 16px;
+}
+
+.change-btn {
+    border: 0;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: rgba(203, 17, 171, 1);
+    padding-top: 7px;
+}
+
+.change-btn:hover {
+    cursor: pointer;
+}
+
+.delivery-item {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.delivery-headers {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    margin-right: 32px;
+}
+
+.delivery-values {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.delivery-values .small-text-box {
+    margin-top: 4px;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.box-height-44 {
+    height: 44px;
+}
+
+.box-height-56 {
+    height: 56px;
+}
+
+.images-container {
+    display: flex;
+    gap: 8px;
+}
+
+.images-container .image-box {
+    width: 40px;
+    height: 56px;
+    border-radius: 8px;
+} 
+
+.rejection-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.green-text {
+    color: rgba(12, 180, 119, 1);
+    border-bottom: 2px dashed rgba(12, 180, 119, 0.2);
+}
+
+.payment-card {
+    display: flex;
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.payment-card-image {
+    margin-right: 8px;
+    width: 32px;
+    height: 24px;
+    border-radius: 4px;
+}
+
+.card-number {
+    margin-right: 12px;
+}
+
+.card-comment {
+    font-size: 13px;
+    line-height: 16px;
+    color: rgba(151, 151, 175, 1);
+}
+
+.list-fields {
+    display: flex;
+    gap: 24px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+.field-comment {
+    margin-bottom: 2px;
+    font-size: 13px;
+    line-height: 16px;
+    color: rgba(151, 151, 175, 1);
+}
+
+.field-input {
+    margin-bottom: 3px;
+    font-size: 16px;
+    line-height: 24px;
+    color: black;
+    border: 0;
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 400;
+}
+
+.field-input::placeholder {
+    color: rgba(151, 151, 175, 1);
+}
+
+.field-input:focus {
+    outline: none;
+}
+
+.field-border {
+    margin-bottom: 4px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.field-error-message {
+    font-size: 12px;
+    line-height: 14px;
+    color: rgba(245, 81, 35, 1);
+}

@@ -1,0 +1,80 @@
+.right-item {
+    margin-top: -12px;
+    border-radius: 16px;
+    background-color: white;
+    padding: 16px 24px 24px 24px;
+    justify-content: center;
+    gap: 24px;
+    width: 28%;
+    height: fit-content;
+
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.finish-price {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.finish-delivery {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.finish-delivery-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.pink-text {
+    color: rgba(203, 17, 171, 1);
+    width: max-content;
+    border-bottom: 2px dashed rgba(203, 17, 171, 0.2);
+}
+
+.gray-box {
+    padding: 8px 8px 12px 8px;
+    border-radius: 8px;
+    display: flex;
+    gap: 8px;
+    background-color: rgba(246, 246, 250, 1);
+}
+
+.finish-payment {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.finish-payment-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.finish-order {
+    display: flex;
+    flex-direction: column;
+}
+
+.pink-btn {
+    border: 0;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    border-radius: 8px;
+    background-color: rgba(203, 17, 171, 1);
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.gray-line {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}

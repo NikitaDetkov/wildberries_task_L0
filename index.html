@@ -15,6 +15,11 @@
 </head>
 <body>
     <header>
+        <div class="header-elem desktop-none">
+            <div class="icon-28-28">
+                <img src="./images/menu_2.svg">
+            </div>
+        </div>
         <div class="header-elem header-elem-first">
             <div class="button-menu mobile-none">
                 <div class="button-menu-icon">
@@ -23,6 +28,11 @@
             </div>
             <div class="text-logo">
                 Товары и точка
+            </div>
+        </div>
+        <div class="header-elem desktop-none">
+            <div class="icon-28-28">
+                <img src="./images/search_white.svg">
             </div>
         </div>
         <div class="header-elem header-elem-second mobile-none">
@@ -93,7 +103,7 @@
                                     <div class="quantity-container">
                                         <div class="counter">
                                             <button class="counter-box-btn counter-box-minus">
-                                                <div class="counter-box-elem">−</div>
+                                                <div class="counter-box-elem color-gray">−</div>
                                             </button>
                                             <div class="counter-value-box">
                                                 <input class="counter-value" type="text" name="counter" value="1" disabled>
@@ -110,8 +120,8 @@
                                         </div>
                                     </div>
                                     <div class="price-container">
-                                        <div class="new-price"><span class="price-number">522</span> сом</div>
-                                        <span class="old-price">1051 сом</span>
+                                        <div class="new-price"><span class="price-number" id="price_1">0</span> сом</div>
+                                        <span class="old-price"><span id="old_price_1">0</span> сом</span>
                                     </div>
                                 </div>
                             </div>
@@ -162,8 +172,8 @@
                                         </div>
                                     </div>
                                     <div class="price-container">
-                                        <div class="new-price">2 100 047 сом</div>
-                                        <span class="old-price">2 300 047 сом</span>
+                                        <div class="new-price"><span id="price_2">0</span> сом</div>
+                                        <span class="old-price"><span id="old_price_2">0</span> сом</span>
                                     </div>
                                 </div>
                             </div>
@@ -202,7 +212,7 @@
                                             </div>
                                             
                                             <button class="counter-box-btn counter-box-plus">
-                                                <div class="counter-box-elem">+</div>
+                                                <div class="counter-box-elem color-gray">+</div>
                                             </button>
                                         </div>
                                         <span class="limiter">Осталось 2 шт.</span>
@@ -212,8 +222,8 @@
                                         </div>
                                     </div>
                                     <div class="price-container">
-                                        <div class="new-price"><span class="price-number">494</span> сом</div>
-                                        <span class="old-price">950 сом</span>
+                                        <div class="new-price"><span class="price-number" id="price_3">0</span> сом</div>
+                                        <span class="old-price"><span id="old_price_3">0</span> сом</span>
                                     </div>
                                 </div>
                             </div>
@@ -352,36 +362,36 @@
                             <h3 class="mb-16">Получатель</h3>
                             <div class="list-fields mb-16">
                                 <div class="field">
-                                    <span class="field-comment">Имя</span>
-                                    <input class="field-input" type="text" name="" id="" placeholder="Имя">
+                                    <span class="field-comment" id="name_comment">Имя</span>
+                                    <input class="field-input" type="text" id="name_input" placeholder="Имя">
                                     <div class="field-border"></div>
-                                    <span class="field-error-message">Укажите имя</span>
+                                    <span class="field-error-message" id="name_error">Укажите имя</span>
                                 </div>
                                 <div class="field">
-                                    <span class="field-comment">Фамилия</span>
-                                    <input class="field-input" type="text" name="" id="" placeholder="Фамилия">
+                                    <span class="field-comment" id="surname_comment">Фамилия</span>
+                                    <input class="field-input" type="text" id="surname_input" placeholder="Фамилия">
                                     <div class="field-border"></div>
-                                    <span class="field-error-message">Укажите фамилию</span>
+                                    <span class="field-error-message" id="surname_error">Укажите фамилию</span>
                                 </div>
                             </div>
                             <div class="list-fields">
                                 <div class="field">
-                                    <span class="field-comment">Почта</span>
-                                    <input class="field-input" type="text" name="" id="" placeholder="Почта">
+                                    <span class="field-comment" id="mail_comment">Почта</span>
+                                    <input class="field-input" type="text" id="mail_input" placeholder="Почта">
                                     <div class="field-border"></div>
-                                    <span class="field-error-message">Используйте латинские буквы</span>
+                                    <span class="field-error-message" id="mail_error">Используйте латинские буквы</span>
                                 </div>
                                 <div class="field">
-                                    <span class="field-comment">Телефон</span>
-                                    <input class="field-input" type="text" name="" id="" placeholder="Фамилия">
+                                    <span class="field-comment" id="phone_comment">Телефон</span>
+                                    <input class="field-input" type="text" id="phone_input" placeholder="Фамилия">
                                     <div class="field-border"></div>
-                                    <span class="field-error-message">Укажите фамилию</span>
+                                    <span class="field-error-message" id="phone_error">Укажите фамилию</span>
                                 </div>
                                 <div class="field">
-                                    <span class="field-comment">ИНН</span>
-                                    <input class="field-input" type="text" name="" id="" placeholder="ИНН">
+                                    <span class="field-comment" id="inn_comment">ИНН</span>
+                                    <input class="field-input" type="text" id="inn_input" placeholder="ИНН">
                                     <div class="field-border"></div>
-                                    <span class="field-error-message color-black">Для таможенного оформления</span>
+                                    <span class="field-error-message color-black" id="inn_error">Для таможенного оформления</span>
                                 </div>
                             </div>
                         </div>
@@ -390,19 +400,19 @@
             </div>
 
             <div class="content-item right-item">
-                <div class="d-flex-column gap-24">
+                <div class="finish-container">
                     <div class="finish-price">
                         <div class="d-flex j-c-space-between mb-8">
                             <h3>Итого</h3>
-                            <h3>2 101 063 сом</h3>
+                            <h3><span id="price_sum">0</span> сом</h3>
                         </div>
                         <div class="d-flex j-c-space-between">
                             <span>4 товара</span>
-                            <span>2 302 048 сом</span>
+                            <span><span id="old_price_sum">0</span> сом</span>
                         </div>
                         <div class="d-flex j-c-space-between">
                             <span>Скидка</span>
-                            <span>−200 985 сом</span>
+                            <span>−<span id="discount_sum">0</span> сом</span>
                         </div>
                         <div class="d-flex j-c-space-between">
                             <span>Доставка</span>
@@ -427,7 +437,7 @@
                     </div>
 
                     <div class="finish-payment">
-                        <div class="finish-payment-info">
+                        <div class="finish-payment-info mobile-none">
                             <div class="d-flex j-c-space-between vertical-center">
                                 <h4>Оплата картой</h4>
                                 <div class="icon-20-20"><img src="./images/pen.svg"></div>
@@ -441,14 +451,14 @@
                         </div>
                         <div class="gray-box d-flex-column">
                             <div class="d-flex vertical-center">
-                                <input type="checkbox" class="checkbox" id="5"><label for="5"></label>
+                                <input type="checkbox" class="checkbox" id="payment_checkbox"><label for="payment_checkbox"></label>
                                 <span style="margin-left: -4px;">Списать оплату сразу</span>
                             </div>
                             <span>Спишем оплату с карты при получении</span>
                         </div>
                     </div>
                     <div class="finish-order">
-                        <button type="button" class="pink-btn">Заказать</button>
+                        <button type="button" id="order_button" class="pink-btn">Заказать</button>
                         <div class="d-flex">
                             <div class="mt-3 mr-8"><img src="./images/check_mark.svg"></div>
                             <span>Соглашаюсь 
@@ -475,6 +485,9 @@
         <div class="icon-28-28"><img src="./images/heart_gray.svg"></div>
         <div class="icon-28-28"><img src="./images/person_gray.svg"></div>
     </div>
-    <script src="./js/scripts_checkboxes.js"></script>
+    <script src="./js/products_checkboxes.js"></script>
+    <script src="./js/button_order.js"></script>
+    <script src="./js/prices.js"></script>
+    <script src="./js/behaviour_inputs.js"></script>
 </body>
 </html>

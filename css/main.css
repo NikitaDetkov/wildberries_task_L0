@@ -155,8 +155,12 @@ h4 {
     color: black !important;
 }
 
+.color-gray {
+    color: rgba(0, 0, 0, 0.2);
+}
+
 .desktop-none {
-    display: none;
+    display: none !important;
 }
 
 .navbar-lower {

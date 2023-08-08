@@ -35,9 +35,16 @@ const html_discount_sum = document.querySelector('#discount_sum');
 const payment_checkbox = document.querySelector('#payment_checkbox');
 const order_button = document.querySelector('#order_button');
 
+// Установить в DOM цены на товары
 setPrices();
+
+// Установить в DOM итоговые цены и скидку
 setPricesSum();
 
+
+// Слушатели событий и функции =============================================
+
+// Слушатель событий
 payment_checkbox.addEventListener('change', () => {
     changeOrderButton();
 })
@@ -70,6 +77,7 @@ for (let i = 0; i < 3; i++) {
     })
 }
 
+// Изменить в DOM значение в кнопке заказа
 function changeOrderButton() {
     if (payment_checkbox.checked) {
         order_button.innerHTML = `Оплатить ${html_price_sum.innerHTML}`;
@@ -78,7 +86,8 @@ function changeOrderButton() {
     }
 }
 
-// 
+// Установка цен на товары в DOM 
+// (для НЕРЕАЛИЗОВАННОГО случая, если мы будем менять количество товаров)
 function setPrices() {
     for (let i = 0; i < 3; i++) {
         setNumber(html_prices[i], prices[i]);
@@ -86,6 +95,7 @@ function setPrices() {
     }
 }
 
+// Установка в DOM итоговых цен и скидки
 function setPricesSum() {
     price_sum = calculateSum(prices);
     old_price_sum = calculateSum(old_prices);
@@ -122,16 +132,15 @@ function setNumber(html_elem, num_elem) {
     html_elem.innerHTML = num_elem_str;
 }
 
-
+// Вычисление суммы цены выбранных соваров
+// Возвращает сумму товаров, где выбран checkbox
 function calculateSum(prices_arr) {
     let sum = 0;
-
     for (let i = 0; i < 3; i ++) {
         if (checkboxes[i].checked) {
             sum += prices_arr[i];
         }
     }
-
     return sum;
 }
 

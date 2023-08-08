@@ -48,7 +48,11 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    border-top:1px solid rgba(0, 0, 0, 0.1);
+}
+
+.products-border {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: -16px;
 }
 
 .product {
@@ -68,9 +72,30 @@
     display: flex;
 }
 
+.size_product {
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    height: 22px;
+    width: 22px;
+    background-color: white;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+
+.size_product_many {
+    width: 72px;
+}
+
 .product-image {
     border-radius: 8px;
     height: 96px;
+    width: 72px;
 }
 
 .product-info {
@@ -190,6 +215,22 @@
     gap: 16px;
 }
 
+.basket-icon:hover {
+    cursor: pointer;
+}
+
+.basket-icon:hover path {
+    fill: rgba(245, 81, 35, 1);
+}
+
+.heart-icon:hover {
+    cursor: pointer;
+}
+
+.heart-icon:hover path {
+    fill: rgba(203, 17, 171, 1);
+}
+
 .price-container {
     display: flex;
     flex-direction: column;
@@ -247,17 +288,17 @@
     cursor: pointer;
 }
 
-.delivery-item {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+.delivery-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: 32px;
+    grid-row-gap: 16px;
 }
 
-.delivery-headers {
+.delivery-header {
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
-    margin-right: 32px;
 }
 
 .delivery-values {
@@ -265,18 +306,10 @@
     line-height: 24px;
 }
 
-.delivery-values .small-text-box {
+.small-text-box {
     margin-top: 4px;
     font-size: 13px;
     line-height: 16px;
-}
-
-.box-height-44 {
-    height: 44px;
-}
-
-.box-height-56 {
-    height: 56px;
 }
 
 .images-container {
@@ -307,8 +340,6 @@
 .payment-card {
     display: flex;
     margin-bottom: 8px;
-    font-size: 16px;
-    line-height: 24px;
 }
 
 .payment-card-image {
@@ -328,14 +359,21 @@
     color: rgba(151, 151, 175, 1);
 }
 
+.recipient {
+    margin-bottom: 16px;
+}
+
 .list-fields {
     display: flex;
     gap: 24px;
+    width: 100%;
+    max-width: 700px;
 }
 
 .field {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .field-comment {

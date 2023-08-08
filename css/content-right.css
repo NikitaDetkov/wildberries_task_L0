@@ -10,6 +10,7 @@
 
     font-size: 13px;
     line-height: 16px;
+    position: relative;
 }
 
 .finish-container {
@@ -79,6 +80,10 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
+}
+
+.pink-btn:hover {
+    cursor: pointer;
 }
 
 .gray-line {

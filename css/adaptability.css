@@ -1,3 +1,8 @@
+@media(max-width: 950px) {
+    .list-fields {
+        flex-direction: column;
+    }
+}
 @media(max-width: 900px) {
     
     .mobile-none {
@@ -21,22 +26,160 @@
     .content-container {
         flex-direction: column;
         padding: 0px;
+        margin-top: 24px;
+        margin-bottom: 24px;
+        gap: 16px;
     }
 
     .left-item {
         width: 100%;
+        gap: 16px;
     }
 
     h2 {
         font-size: 20px;
         line-height: 28px;
         letter-spacing: -0.01em;
+        font-weight: 700;
+        margin-left: 16px;
     }
 
     h3 {
         font-size: 20px;
         line-height: 28px;
         letter-spacing: -0.01em;
+        font-weight: 700;
+    }
+
+    .new-price .price-number {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0px;
+    }
+
+    
+    .basket {
+        gap: 32px;
+    }
+
+    .basket-elem {
+        padding: 0 16px;
+    }
+
+    .list-products {
+        gap: 16px;
+    }
+
+    .product {
+        flex-direction: column;
+    }
+
+    .product-image-box {
+        position: relative;
+    }
+
+    .checkbox-container {
+        position: absolute;
+        top: 4px;
+        left: 4px;
+    }
+
+    .checkbox_white_mobile+label::before {
+        background: white;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+
+    .product-info {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .product-image {
+        height: 106px;
+        width: 80px;
+    } 
+
+    .product-right-elem {
+        width: 100%;
+    }
+
+    .price-container {
+        flex-direction: row;
+        justify-self: left;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .quantity-container {
+        flex-direction: row;
+    }
+
+
+
+    .registration {
+        gap: 12px;
+        padding: 0;
+    }
+
+    .delivery-container {
+        grid-template-columns: 1fr;
+        row-gap: 0;
+    }
+
+    .mobile-mb-12 {
+        margin-bottom: 12px;
+    }
+
+    .mobile-mb-16 {
+        margin-bottom: 16px;
+    }
+
+    .mobile-mb-24 {
+        margin-bottom: 24px;
+    }
+
+    .change-btn {
+        padding-top: 3px;
+    }
+
+    .registration-elem {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .list-fields {
+        gap: 16px;
+    }
+
+    .recipient {
+        margin-bottom: 8px;
+    }
+
+    .field-comment {
+        font-size: 12px;
+        line-height: 14px;
+        margin-left: -1px;
+        margin-top: -4px;
+    }
+    
+    .field-input {
+        margin-left: -1px;
+    }
+
+    .field-border {
+        margin-bottom: 3px;
+    }
+
+    .field-error-message {
+        margin-left: -1px;
+    }
+
+    .right-item {
+        width: calc(100% - 48px);
+        background-color: rgba(246, 246, 250, 1);
+        padding: 8px 16px 16px 16px;
+        margin-top: 0;
     }
 
     .finish-container {
@@ -47,26 +190,8 @@
         background-color: rgba(240, 236, 244, 1);
     }
 
-    .product {
-        flex-direction: column;
+    .pink-btn-box {
+        margin-top: 8px;
     }
-
-    .new-price .price-number {
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: 0px;
-    }
-
-    .list-fields {
-        flex-direction: column;
-    }
-
-    .right-item {
-        width: calc(100% - 48px);
-        background-color: rgba(246, 246, 250, 1);
-    }
-
-
-
 
 }

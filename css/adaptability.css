@@ -194,4 +194,8 @@
         margin-top: 8px;
     }
 
+    .modal-window {
+        border-radius: 0;
+    }
+
 }

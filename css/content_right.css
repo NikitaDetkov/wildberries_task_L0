@@ -27,13 +27,17 @@
 .finish-delivery {
     display: flex;
     flex-direction: column;
-    gap: 8px;
 }
 
 .finish-delivery-info {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    margin-bottom: 12px;
+}
+
+.icon-open-window {
+    cursor: pointer;
 }
 
 .pink-text {

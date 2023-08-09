@@ -122,6 +122,7 @@
 
 .letter-i {
     font-size: 16px;
+    cursor: pointer;
 }
 
 .product-right-elem {
@@ -234,6 +235,7 @@
 .price-container {
     display: flex;
     flex-direction: column;
+    gap: 5px;
     text-align: right;
     align-items: end;
 }
@@ -241,7 +243,7 @@
 .new-price {
     font-weight: 700;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 28px;
 }
 
 .new-price .price-number {
@@ -256,7 +258,8 @@
     color: rgba(151, 151, 175, 1);
     width: max-content;
     border-bottom: 2px dashed rgba(0, 0, 0, 0.2);
-    text-decoration: 1.5px line-through solid rgba(160, 160, 164, 1);
+    text-decoration: 1px line-through solid rgba(160, 160, 164, 1);
+    cursor: pointer;
 }
 
 .missing-products {
@@ -332,11 +335,6 @@
     line-height: 16px;
 }
 
-.green-text {
-    color: rgba(12, 180, 119, 1);
-    border-bottom: 2px dashed rgba(12, 180, 119, 0.2);
-}
-
 .payment-card {
     display: flex;
     margin-bottom: 8px;
@@ -347,6 +345,10 @@
     width: 32px;
     height: 24px;
     border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(246, 246, 250, 1);
 }
 
 .card-number {

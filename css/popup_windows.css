@@ -1,0 +1,78 @@
+.popup-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup-container-discount {
+    position: relative;
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+    align-items:end;
+}
+
+.popup-info {
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+    color: black;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0px;
+    position: absolute;
+    display: none;
+    opacity: 0;
+}
+
+.popup-info-market {
+    top: 16px;
+    padding: 11px 16px 13px 16px;
+    gap: 8px;
+    width: 248px;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-left: 2px;
+}
+
+.popup-info-free {
+    padding: 10px 16px 14px 16px;
+    min-width: 256px;
+}
+
+.popup-info-discount {
+    padding: 11px 16px 13px 16px;
+    gap: 8px;
+    width: max-content;
+    top: 21px;
+    right: -10px;
+}
+
+.info-discount-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: rgba(160, 160, 164, 1);
+    text-align: left;
+}
+
+.info-discount-values {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: right;
+}
+
+#popup-info-free-1 {
+    left: 8px;
+    right: 8px;
+}
+
+#popup-info-free-2 {
+    top: 22px;
+}

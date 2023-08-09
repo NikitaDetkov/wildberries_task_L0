@@ -169,9 +169,7 @@ function removeError(field) {
 }
 
 function addSpaces(value) {
-    console.log(value);
     value = value.replaceAll(' ', '');
-    console.log(value);
     value = value.split('');
     let valueWithSpaces = [];
 

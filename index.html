@@ -6,9 +6,11 @@
 
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/content-right.css">
-    <link rel="stylesheet" href="./css/content-left.css">
+    <link rel="stylesheet" href="./css/content_right.css">
+    <link rel="stylesheet" href="./css/content_left.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/popup_windows.css">
+    <link rel="stylesheet" href="./css/modal_windows.css">
     <link rel="stylesheet" href="./css/adaptability.css">
     
     <title>WB Frontend L0</title>
@@ -97,10 +99,17 @@
                                             <span>Коледино WB</span>
                                             <div class="d-flex vertical-center gap-6 mobile-none">
                                                 <span>OOO Вайлдберриз</span>
-                                                <span class="letter-i">&#9432;</span>
+                                                <div class="popup-container">
+                                                    <span id="popup-button-market-1" class="letter-i">&#9432;</span>
+                                                    <div class="popup-info popup-info-market" id="popup-info-market-1">
+                                                        <h5>OOO «Вайлдберриз»</h5>
+                                                        <span>ОГРН: 5167746237148</span>
+                                                        <span>129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34</span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> 
                                 </div>
                                 <div class="product-right-elem">
                                     <div class="quantity-container">
@@ -134,13 +143,22 @@
                                     </div>
                                     <div class="price-container">
                                         <div class="new-price"><span class="price-number" id="price_1">0</span> сом</div>
-                                        <span class="old-price"><span id="old_price_1">0</span> сом</span>
+                                        <div class="popup-container-discount">
+                                            <span id="popup-button-discount-1" class="old-price"><span id="old_price_1">0</span> сом</span>
+                                            <div class="popup-info popup-info-discount" id="popup-info-discount-1">
+                                                <span class="info-discount-header">
+                                                    <span>Скидка 55%</span>
+                                                    <span>Скидка покупателя 10%</span>
+                                                </span>
+                                                <span class="info-discount-values">
+                                                    <span>−300 сом</span>
+                                                    <span>−30 сом</span>
+                                                </span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-
-
 
                             <!-- <div class="product">
 
@@ -221,9 +239,16 @@
                                         </div>
                                         <div class="product-info-market">
                                             <span>Коледино WB</span>
-                                            <div class="d-flex vertical-center gap-6">
+                                            <div class="d-flex vertical-center gap-6 mobile-none">
                                                 <span>OOO Мегапрофстиль</span>
-                                                <span class="letter-i">&#9432;</span>
+                                                <div class="popup-container">
+                                                    <span id="popup-button-market-2" class="letter-i">&#9432;</span>
+                                                    <div class="popup-info popup-info-market" id="popup-info-market-2">
+                                                        <h5>OOO «МЕГАПРОФСТИЛЬ»</h5>
+                                                        <span>ОГРН: 5167746237148</span>
+                                                        <span>129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34</span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -259,7 +284,19 @@
                                     </div>
                                     <div class="price-container">
                                         <div class="new-price"><span id="price_2">0</span> сом</div>
-                                        <span class="old-price"><span id="old_price_2">0</span> сом</span>
+                                        <div class="popup-container-discount">
+                                            <span id="popup-button-discount-2" class="old-price"><span id="old_price_2">0</span> сом</span>
+                                            <div class="popup-info popup-info-discount" id="popup-info-discount-2">
+                                                <span class="info-discount-header">
+                                                    <span>Скидка 55%</span>
+                                                    <span>Скидка покупателя 10%</span>
+                                                </span>
+                                                <span class="info-discount-values">
+                                                    <span>−300 сом</span>
+                                                    <span>−30 сом</span>
+                                                </span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -283,9 +320,16 @@
                                             заточенные, шестигранные, Faber-Castell </span>
                                         <div class="product-info-market">
                                             <span>Коледино WB</span>
-                                            <div class="d-flex vertical-center gap-6">
+                                            <div class="d-flex vertical-center gap-6 mobile-none">
                                                 <span>OOO Вайлдберриз</span>
-                                                <span class="letter-i">&#9432;</span>
+                                                <div class="popup-container">
+                                                    <span id="popup-button-market-3" class="letter-i">&#9432;</span>
+                                                    <div class="popup-info popup-info-market" id="popup-info-market-3">
+                                                        <h5>OOO «Вайлдберриз»</h5>
+                                                        <span>ОГРН: 5167746237148</span>
+                                                        <span>129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34</span>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -322,7 +366,19 @@
                                     </div>
                                     <div class="price-container">
                                         <div class="new-price"><span class="price-number" id="price_3">0</span> сом</div>
-                                        <span class="old-price"><span id="old_price_3">0</span> сом</span>
+                                        <div class="popup-container-discount">
+                                            <span id="popup-button-discount-3" class="old-price"><span id="old_price_3">0</span> сом</span>
+                                            <div class="popup-info popup-info-discount" id="popup-info-discount-3">
+                                                <span class="info-discount-header">
+                                                    <span>Скидка 55%</span>
+                                                    <span>Скидка покупателя 10%</span>
+                                                </span>
+                                                <span class="info-discount-values">
+                                                    <span>−300 сом</span>
+                                                    <span>−30 сом</span>
+                                                </span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -441,7 +497,7 @@
                         <div class="registration-elem">
                             <div class="d-flex j-c-space-between mb-16 vertical-center">
                                 <h3>Способ доставки</h3>
-                                <div class="change-btn">Изменить</div>
+                                <div class="change-btn" id="open-window-delivery-1">Изменить</div>
                             </div>
                             <div class="delivery-container">
                                 <span class="delivery-header">Пунк выдачи</span>
@@ -477,7 +533,14 @@
                             <div class="rejection-info">
                                 <div class="icon-22-22"><img src="./images/sber.svg"></div>
                                 <span>Обратная доставка товаров на склад при отказе —</span>
-                                <span class="green-text">бесплатно</span>
+                                <div class="popup-container green-text" id="popup-button-free-2">
+                                    бесплатно
+                                    <div class="popup-info popup-info-free" id="popup-info-free-2">
+                                        <span>Если товары вам не подойдут, 
+                                            мы вернем их обратно на склад — это бесплатно
+                                        </span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -486,13 +549,13 @@
                         <div class="registration-elem">
                             <div class="d-flex j-c-space-between mb-16 vertical-center">
                                 <h3>Способ оплаты</h3>
-                                <div class="change-btn">Изменить</div>
+                                <div class="change-btn" id="open-window-card-1">Изменить</div>
                             </div>
                             <div class="payment-card">
-                                <div class="payment-card-image">
-                                    <img src="./images/mir.svg">
+                                <div class="payment-card-image" id="card-image-1">
+                                    <img src="./images/mir_icon.svg">
                                 </div>
-                                <span class="card-number">1234 56•• •••• 1234</span>
+                                <span id="card-number-1" class="card-number">1234 56•• •••• 1234</span>
                                 <span class="card-date">01/30</span>
                             </div>
                             <span class="card-comment">Спишем оплату с карты при получении</span>
@@ -563,7 +626,9 @@
                         <div class="finish-delivery-info mobile-none">
                             <div class="d-flex j-c-space-between vertical-center">
                                 <h4>Доставка в пункт выдачи</h4>
-                                <div class="icon-20-20"><img src="./images/pen.svg"></div>
+                                <div class="icon-20-20 icon-open-window" id="open-window-delivery-2">
+                                    <img src="./images/pen.svg">
+                                </div>
                             </div>
                             <div>Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
                             <div class="pink-text">5–8 фев</div>
@@ -571,27 +636,31 @@
                         <div class="gray-box vertical-center">
                             <div class="icon-22-22"><img src="./images/sber.svg"></div>
                             <span>Обратная доставка товаров на склад при отказе —
-                                <span class="green-text" id="modal-button-free">бесплатно</span>
+                                <span class="green-text" id="popup-button-free-1">бесплатно</span>
                             </span>
                         </div>
-                    </div>
-                    <div class="modal-info" id="modal-info-free">
-                        <span>Если товары вам не подойдут, 
-                            мы вернем их обратно на склад — это бесплатно
-                        </span>
+                        <div>
+                            <div class="popup-info popup-info-free" id="popup-info-free-1">
+                                <span>Если товары вам не подойдут, 
+                                    мы вернем их обратно на склад — это бесплатно
+                                </span>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="finish-payment">
                         <div class="finish-payment-info mobile-none">
                             <div class="d-flex j-c-space-between vertical-center">
                                 <h4>Оплата картой</h4>
-                                <div class="icon-20-20"><img src="./images/pen.svg"></div>
+                                <div class="icon-20-20 icon-open-window" id="open-window-card-2">
+                                    <img src="./images/pen.svg">
+                                </div>
                             </div>
                             <div class="d-flex vertical-center">
-                                <div class="payment-card-image">
+                                <div class="payment-card-image" id="card-image-2">
                                     <img src="./images/mir.svg">
                                 </div>
-                                <span>1234 12•• •••• 1234</span>
+                                <span id="card-number-2">1234 12•• •••• 1234</span>
                             </div>
                         </div>
                         <div class="gray-box d-flex-column">
@@ -623,6 +692,120 @@
         </div>
     </footer>
 
+    <div class="modal" id="modal-window-card">
+        <button id="background-window-card" class="background-window"></button>
+        <div class="modal-window modal-window-card">
+            <div class="modal-window-header">
+                <h3>Способ оплаты</h3>
+                <div class="btn-close-box" id="close-window-card">
+                    <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.929612 13.1568C0.539088 13.5473 0.539088 14.1805 0.929612 14.571C1.32014 14.9615 1.9533 14.9615 2.34383 14.571L8.00085 8.91399L13.658 14.5711C14.0485 14.9616 14.6817 14.9616 15.0722 14.5711C15.4627 14.1806 15.4627 13.5474 15.0722 13.1569L9.41506 7.49978L15.0717 1.84309C15.4623 1.45257 15.4623 0.819404 15.0717 0.428879C14.6812 0.0383551 14.0481 0.0383555 13.6575 0.428879L8.00085 6.08557L2.34427 0.428985C1.95374 0.0384613 1.32058 0.038461 0.930055 0.428985C0.539531 0.81951 0.539531 1.45267 0.930055 1.8432L6.58663 7.49978L0.929612 13.1568Z" fill="#A0A0A4"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="modal-window-content">
+                <div class="radio-container">
+                    <div class="radio-icon">
+                        <input type="radio" class="radio-btn" name="card" id="mir" value="mir" checked/>
+                        <label for="mir"></label>
+                    </div>
+                    <div class="icon-card"><img src="./images/mir_icon.svg"></div>
+                    <span id="card-number-mir">1234 56•• •••• 1234</span>
+                </div>
+                <div class="radio-container">
+                    <div class="radio-icon">
+                        <input class="radio-btn" type="radio" name="card" id="visa" value="visa"/>
+                        <label for="visa"></label>
+                    </div>
+                    <div class="icon-card"><img src="./images/visa_icon.svg"></div>
+                    <span id="card-number-visa">1234 56•• •••• 1233</span>
+                </div>
+                <div class="radio-container">
+                    <div class="radio-icon">
+                        <input class="radio-btn" type="radio" name="card" id="mastercard" value="mastercard"/>
+                        <label for="mastercard"></label>
+                    </div>
+                    <div class="icon-card"><img src="./images/mastercard_icon.svg"></div>
+                    <span id="card-number-mastercard">1234 56•• •••• 1232</span>
+                </div>
+                <div class="radio-container">
+                    <div class="radio-icon">
+                        <input class="radio-btn" type="radio" name="card" id="maestro" value="maestro"/>
+                        <label for="maestro"></label>
+                    </div>
+                    <div class="icon-card"><img src="./images/maestro_icon.svg"></div>
+                    <span id="card-number-maestro">1234 56•• •••• 1231</span>
+                </div>
+            </div>
+            <button class="enter-btn" id="choose-window-card">Выбрать</button>
+        </div>
+        <div class="overlay"></div>
+    </div>
+
+    <div class="modal" id="modal-window-delivery">
+        <button id="background-window-delivery" class="background-window"></button>
+        <div class="modal-window modal-window-card">
+            <div class="modal-window-header">
+                <h3>Способ доставки</h3>
+                <div class="btn-close-box" id="close-window-delivery">
+                    <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.929612 13.1568C0.539088 13.5473 0.539088 14.1805 0.929612 14.571C1.32014 14.9615 1.9533 14.9615 2.34383 14.571L8.00085 8.91399L13.658 14.5711C14.0485 14.9616 14.6817 14.9616 15.0722 14.5711C15.4627 14.1806 15.4627 13.5474 15.0722 13.1569L9.41506 7.49978L15.0717 1.84309C15.4623 1.45257 15.4623 0.819404 15.0717 0.428879C14.6812 0.0383551 14.0481 0.0383555 13.6575 0.428879L8.00085 6.08557L2.34427 0.428985C1.95374 0.0384613 1.32058 0.038461 0.930055 0.428985C0.539531 0.81951 0.539531 1.45267 0.930055 1.8432L6.58663 7.49978L0.929612 13.1568Z" fill="#A0A0A4"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="modal-window-content">
+                <div class="method-container">
+                    <div class="radio-container">
+                        <div class="radio-icon">
+                            <input type="radio" class="radio-btn" name="method" id="mir" value="mir" checked/>
+                            <label for="mir"></label>
+                        </div>
+                        <div class="icon-card"><img src="./images/mir_icon.svg"></div>
+                        <span id="card-number-mir">1234 56•• •••• 1234</span>
+                    </div>
+                    <div class="radio-container">
+                        <div class="radio-icon">
+                            <input class="radio-btn" type="radio" name="method" id="visa" value="visa"/>
+                            <label for="visa"></label>
+                        </div>
+                        <div class="icon-card"><img src="./images/visa_icon.svg"></div>
+                        <span id="card-number-visa">1234 56•• •••• 1233</span>
+                    </div>
+                </div>
+                <div class="address-container">
+                    <div class="radio-container">
+                        <div class="radio-icon">
+                            <input type="radio" class="radio-btn" name="address" id="mir" value="mir" checked/>
+                            <label for="mir"></label>
+                        </div>
+                        <div class="icon-card"><img src="./images/mir_icon.svg"></div>
+                        <span id="card-number-mir">1234 56•• •••• 1234</span>
+                    </div>
+                    <div class="radio-container">
+                        <div class="radio-icon">
+                            <input class="radio-btn" type="radio" name="address" id="visa" value="visa"/>
+                            <label for="visa"></label>
+                        </div>
+                        <div class="icon-card"><img src="./images/visa_icon.svg"></div>
+                        <span id="card-number-visa">1234 56•• •••• 1233</span>
+                    </div>
+                    <div class="radio-container">
+                        <div class="radio-icon">
+                            <input class="radio-btn" type="radio" name="address" id="maestro" value="maestro"/>
+                            <label for="maestro"></label>
+                        </div>
+                        <div class="icon-card"><img src="./images/maestro_icon.svg"></div>
+                        <span id="card-number-maestro">1234 56•• •••• 1231</span>
+                    </div>
+                </div>
+            </div>
+    
+            <button class="enter-btn" id="choose-window-delivery">Выбрать</button>
+        </div>
+        <div class="overlay"></div>
+    </div>
+    
+
     <div class="navbar-lower desktop-none">
         <div class="icon-28-28"><img src="./images/house_gray.svg"></div>
         <div class="icon-28-28"><img src="./images/search_gray.svg"></div>
@@ -633,6 +816,8 @@
     <script src="./js/prices.js"></script>
     <script src="./js/behaviour_inputs.js"></script>
     <script src="./js/hide_lists.js"></script>
-    <script src="./js/modal_windows.js"></script>
+    <script src="./js/popup_windows.js"></script>
+    <script src="./js/modal_window_card.js"></script>
+    <script src="./js/modal_window_delivery.js"></script>
 </body>
 </html>

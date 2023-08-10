@@ -1,4 +1,5 @@
-// Объекты содержащие 
+// Объекты, содержащие html-элементы: поле ввода, комментарий, ошибку, границу.
+// Имя 
 const nameField = {
     input: document.querySelector('#name_input'),
     comment: document.querySelector('#name_comment'),
@@ -7,6 +8,7 @@ const nameField = {
     format: /^[а-яА-Я\-]+$/,
     isError: false,
 };
+// Фамилия
 const surnameField = {
     input: document.querySelector('#surname_input'),
     comment: document.querySelector('#surname_comment'),
@@ -15,6 +17,7 @@ const surnameField = {
     format: /^[а-яА-Я\-]+$/,
     isError: false,
 };
+// Email
 const emailField = {
     input: document.querySelector('#email_input'),
     comment: document.querySelector('#email_comment'),
@@ -23,6 +26,7 @@ const emailField = {
     format: /^[\w]{1}[\w-\.]*@[\w-]+\.[a-z]{2,4}$/i,
     isError: false,
 };
+// Телефон
 const phoneField = {
     input: document.querySelector('#phone_input'),
     comment: document.querySelector('#phone_comment'),
@@ -31,6 +35,7 @@ const phoneField = {
     format: /^(\+\d{1}[\ ])(\d{3}[\ ]){2}\d{2}[\ ]\d{2}$/,
     isError: false,
 };
+// ИНН
 const innField = {
     input: document.querySelector('#inn_input'),
     comment: document.querySelector('#inn_comment'),

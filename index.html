@@ -53,8 +53,9 @@
                 <span>Профиль</span>
             </div>
             <div class="elem-icon">
-                <div class="elem-icon-img">
+                <div class="elem-icon-img p-relative">
                     <img src="./images/shopping_cart.svg">
+                    <div class="quantity quantity-basket">3</div>
                 </div>
                 <span>Корзина</span>
             </div>
@@ -500,9 +501,9 @@
                                 <div class="change-btn" id="open-window-delivery-1">Изменить</div>
                             </div>
                             <div class="delivery-container">
-                                <span class="delivery-header">Пунк выдачи</span>
+                                <span class="delivery-header" id="method-field-1">Пунк выдачи</span>
                                 <div>
-                                    <span>Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
+                                    <span id="address-field-1">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
                                     <div class="d-flex vertical-center small-text-box mobile-mb-16">
                                         <div class="icon-12-16"><img src="./images/star.svg"></div>
                                         <span class="mr-8 ml-4">4.99</span>
@@ -511,22 +512,25 @@
                                 </div>
                                 <span class="delivery-header">Стоимость доставки</span>
                                 <span class="mobile-mb-16">Бесплатно</span>
-                                <span class="delivery-header mobile-mb-12">5—6 февраля</span>
-                                <div class="images-container mobile-mb-24">
-                                    <div class="image-box">
+                                <span class="delivery-header mobile-mb-12 hide" id="delivery-date-1">5—6 февраля</span>
+                                <div class="images-container mobile-mb-24 hide" id="delivery-box-1">
+                                    <div class="image-box hide" id="delivery-product-1">
                                         <img style="height: 100%;" src="./images/product_1.png">
                                     </div>
-                                    <div class="image-box">
+                                    <div class="image-box hide p-relative" id="delivery-product-2-1">
                                         <img style="height: 100%;" src="./images/product_2.png">
+                                        <div class="quantity quantity-product">184</div>
                                     </div>
-                                    <div class="image-box">
+                                    <div class="image-box hide p-relative" id="delivery-product-3">
                                         <img style="height: 100%;" src="./images/product_3.png">
+                                        <div class="quantity quantity-product">2</div>
                                     </div>
                                 </div>
-                                <span class="delivery-header mobile-mb-12">7—8 февраля</span>
-                                <div class="images-container">
-                                    <div class="image-box">
+                                <span class="delivery-header mobile-mb-12 hide" id="delivery-date-2">7—8 февраля</span>
+                                <div class="images-container hide" id="delivery-box-2">
+                                    <div class="image-box hide p-relative" id="delivery-product-2-2">
                                         <img style="height: 100%;" src="./images/product_2.png">
+                                        <div class="quantity quantity-product">16</div>
                                     </div>
                                 </div>
                             </div>
@@ -625,12 +629,12 @@
                     <div class="finish-delivery">
                         <div class="finish-delivery-info mobile-none">
                             <div class="d-flex j-c-space-between vertical-center">
-                                <h4>Доставка в пункт выдачи</h4>
+                                <h4 id="method-field-2">Доставка в пункт выдачи</h4>
                                 <div class="icon-20-20 icon-open-window" id="open-window-delivery-2">
                                     <img src="./images/pen.svg">
                                 </div>
                             </div>
-                            <div>Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
+                            <div id="address-field-2">Бишкек, улица Ахматбека Суюмбаева, 12/1</div>
                             <div class="pink-text">5–8 фев</div>
                         </div>
                         <div class="gray-box vertical-center">
@@ -699,7 +703,12 @@
                 <h3>Способ оплаты</h3>
                 <div class="btn-close-box" id="close-window-card">
                     <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.929612 13.1568C0.539088 13.5473 0.539088 14.1805 0.929612 14.571C1.32014 14.9615 1.9533 14.9615 2.34383 14.571L8.00085 8.91399L13.658 14.5711C14.0485 14.9616 14.6817 14.9616 15.0722 14.5711C15.4627 14.1806 15.4627 13.5474 15.0722 13.1569L9.41506 7.49978L15.0717 1.84309C15.4623 1.45257 15.4623 0.819404 15.0717 0.428879C14.6812 0.0383551 14.0481 0.0383555 13.6575 0.428879L8.00085 6.08557L2.34427 0.428985C1.95374 0.0384613 1.32058 0.038461 0.930055 0.428985C0.539531 0.81951 0.539531 1.45267 0.930055 1.8432L6.58663 7.49978L0.929612 13.1568Z" fill="#A0A0A4"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.929612 13.1568C0.539088 13.5473 0.539088 14.1805 
+                            0.929612 14.571C1.32014 14.9615 1.9533 14.9615 2.34383 14.571L8.00085 8.91399L13.658 14.5711C14.0485 
+                                14.9616 14.6817 14.9616 15.0722 14.5711C15.4627 14.1806 15.4627 13.5474 15.0722 13.1569L9.41506 
+                                7.49978L15.0717 1.84309C15.4623 1.45257 15.4623 0.819404 15.0717 0.428879C14.6812 0.0383551 14.0481 
+                                0.0383555 13.6575 0.428879L8.00085 6.08557L2.34427 0.428985C1.95374 0.0384613 1.32058 0.038461 0.930055 
+                                0.428985C0.539531 0.81951 0.539531 1.45267 0.930055 1.8432L6.58663 7.49978L0.929612 13.1568Z" fill="#A0A0A4"/>
                     </svg>
                 </div>
             </div>
@@ -737,70 +746,124 @@
                     <span id="card-number-maestro">1234 56•• •••• 1231</span>
                 </div>
             </div>
-            <button class="enter-btn" id="choose-window-card">Выбрать</button>
+            <div class="enter-btn-container">
+                <button class="enter-btn" id="choose-window-card">Выбрать</button>
+            </div>
         </div>
         <div class="overlay"></div>
     </div>
 
     <div class="modal" id="modal-window-delivery">
         <button id="background-window-delivery" class="background-window"></button>
-        <div class="modal-window modal-window-card">
+        <div class="modal-window modal-window-delivery">
             <div class="modal-window-header">
                 <h3>Способ доставки</h3>
                 <div class="btn-close-box" id="close-window-delivery">
                     <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.929612 13.1568C0.539088 13.5473 0.539088 14.1805 0.929612 14.571C1.32014 14.9615 1.9533 14.9615 2.34383 14.571L8.00085 8.91399L13.658 14.5711C14.0485 14.9616 14.6817 14.9616 15.0722 14.5711C15.4627 14.1806 15.4627 13.5474 15.0722 13.1569L9.41506 7.49978L15.0717 1.84309C15.4623 1.45257 15.4623 0.819404 15.0717 0.428879C14.6812 0.0383551 14.0481 0.0383555 13.6575 0.428879L8.00085 6.08557L2.34427 0.428985C1.95374 0.0384613 1.32058 0.038461 0.930055 0.428985C0.539531 0.81951 0.539531 1.45267 0.930055 1.8432L6.58663 7.49978L0.929612 13.1568Z" fill="#A0A0A4"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" 
+                            d="M0.929612 13.1568C0.539088 13.5473 0.539088 14.1805 0.929612 14.571C1.32014 14.9615 1.9533 14.9615 
+                                2.34383 14.571L8.00085 8.91399L13.658 14.5711C14.0485 14.9616 14.6817 14.9616 15.0722 14.5711C15.4627 14.1806 
+                                15.4627 13.5474 15.0722 13.1569L9.41506 7.49978L15.0717 1.84309C15.4623 1.45257 15.4623 0.819404 15.0717 
+                                0.428879C14.6812 0.0383551 14.0481 0.0383555 13.6575 0.428879L8.00085 6.08557L2.34427 0.428985C1.95374 0.0384613 1.32058 
+                                0.038461 0.930055 0.428985C0.539531 0.81951 0.539531 1.45267 0.930055 1.8432L6.58663 7.49978L0.929612 13.1568Z" fill="#A0A0A4"/>
                     </svg>
                 </div>
             </div>
-            <div class="modal-window-content">
+            <div class="modal-window-content delivery-content">
                 <div class="method-container">
-                    <div class="radio-container">
-                        <div class="radio-icon">
-                            <input type="radio" class="radio-btn" name="method" id="mir" value="mir" checked/>
-                            <label for="mir"></label>
+                    <div class="radio-container ">
+                        <div class="form_radio_btn">
+                            <input type="radio" name="method"
+                                value="method-1" id="method-1" checked/>
+                            <label for="method-1" id="text-method-1">В пункт выдачи</label>
                         </div>
-                        <div class="icon-card"><img src="./images/mir_icon.svg"></div>
-                        <span id="card-number-mir">1234 56•• •••• 1234</span>
                     </div>
                     <div class="radio-container">
-                        <div class="radio-icon">
-                            <input class="radio-btn" type="radio" name="method" id="visa" value="visa"/>
-                            <label for="visa"></label>
+                        <div class="form_radio_btn">
+                            <input type="radio" name="method" 
+                                value="method-2" id="method-2"/>
+                            <label for="method-2" id="text-method-2">Курьером</label>
                         </div>
-                        <div class="icon-card"><img src="./images/visa_icon.svg"></div>
-                        <span id="card-number-visa">1234 56•• •••• 1233</span>
                     </div>
                 </div>
                 <div class="address-container">
+                    <h5>Мои адреса</h5>
                     <div class="radio-container">
                         <div class="radio-icon">
-                            <input type="radio" class="radio-btn" name="address" id="mir" value="mir" checked/>
-                            <label for="mir"></label>
+                            <input type="radio" class="radio-btn" name="address" 
+                                value="address-1" id="address-1" checked/>
+                            <label for="address-1"></label>
                         </div>
-                        <div class="icon-card"><img src="./images/mir_icon.svg"></div>
-                        <span id="card-number-mir">1234 56•• •••• 1234</span>
+                        <div class="address-text">
+                            <span id="text-address-1">Бишкек, улица Табышалиева, 57</span>
+                            <div class="d-flex vertical-center gap-8 desktop-none">
+                                <div class="icon-12-12"><img src="./images/star.svg"></div>
+                                <span class="address-text-info">Пункт выдачи</span>
+                            </div>
+                        </div>
+                        <div class="icon-20-20">
+                            <svg class="basket-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 3C0.5 2.72386 0.723858 2.5 1 2.5H15C15.2761 2.5 15.5 2.72386 15.5 3C15.5 3.27614 15.2761 3.5 15 3.5H1C0.723858 3.5 0.5 3.27614 0.5 3Z" fill="black"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.4584 2.5H14.5059L13.6411 13.6926C13.5405 14.9947 12.4546 16 11.1486 16H4.84639C3.54299 16 2.45829 14.9986 2.35435 13.6994L1.4584 2.5ZM2.5416 3.5L3.35117 13.6196C3.41353 14.3992 4.06435 15 4.84639 15H11.1486C11.9322 15 12.5837 14.3968 12.6441 13.6155L13.4256 3.5H2.5416Z" fill="black"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11 3.5H5V1.46875C5 0.657582 5.65758 0 6.46875 0H9.53125C10.3424 0 11 0.657582 11 1.46875V3.5ZM6.46875 1C6.20987 1 6 1.20987 6 1.46875V2.5H10V1.46875C10 1.20987 9.79013 1 9.53125 1H6.46875Z" fill="black"/>
+                            </svg>    
+                        </div>
+                    </div>
+
+                    <div class="radio-container">
+                        <div class="radio-icon">
+                            <input class="radio-btn" type="radio" name="address" 
+                                value="address-2" id="address-2"/>
+                            <label for="address-2"></label>
+                        </div>
+                        <div class="address-text">
+                            <span id="text-address-2">Бишкек, улица Жукеева-Пудовкина, 77/1</span>
+                            <div class="d-flex vertical-center gap-8 desktop-none">
+                                <div class="icon-star-box">
+                                    <div class="icon-12-12"><img src="./images/star.svg"></div>
+                                    <span>4.99</span>
+                                </div>
+                                <span class="address-text-info">Пункт выдачи</span>
+                            </div>
+                        </div>
+                        <div class="icon-20-20">
+                            <svg class="basket-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 3C0.5 2.72386 0.723858 2.5 1 2.5H15C15.2761 2.5 15.5 2.72386 15.5 3C15.5 3.27614 15.2761 3.5 15 3.5H1C0.723858 3.5 0.5 3.27614 0.5 3Z" fill="black"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.4584 2.5H14.5059L13.6411 13.6926C13.5405 14.9947 12.4546 16 11.1486 16H4.84639C3.54299 16 2.45829 14.9986 2.35435 13.6994L1.4584 2.5ZM2.5416 3.5L3.35117 13.6196C3.41353 14.3992 4.06435 15 4.84639 15H11.1486C11.9322 15 12.5837 14.3968 12.6441 13.6155L13.4256 3.5H2.5416Z" fill="black"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11 3.5H5V1.46875C5 0.657582 5.65758 0 6.46875 0H9.53125C10.3424 0 11 0.657582 11 1.46875V3.5ZM6.46875 1C6.20987 1 6 1.20987 6 1.46875V2.5H10V1.46875C10 1.20987 9.79013 1 9.53125 1H6.46875Z" fill="black"/>
+                            </svg>    
+                        </div>
                     </div>
                     <div class="radio-container">
                         <div class="radio-icon">
-                            <input class="radio-btn" type="radio" name="address" id="visa" value="visa"/>
-                            <label for="visa"></label>
+                            <input class="radio-btn" type="radio" name="address" 
+                                value="address-3" id="address-3"/>
+                            <label for="address-3"></label>
                         </div>
-                        <div class="icon-card"><img src="./images/visa_icon.svg"></div>
-                        <span id="card-number-visa">1234 56•• •••• 1233</span>
-                    </div>
-                    <div class="radio-container">
-                        <div class="radio-icon">
-                            <input class="radio-btn" type="radio" name="address" id="maestro" value="maestro"/>
-                            <label for="maestro"></label>
+                        <div class="address-text">
+                            <span id="text-address-3">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</span>
+                            <div class="d-flex vertical-center gap-8 desktop-none">
+                                <div class="icon-star-box">
+                                    <div class="icon-12-12"><img src="./images/star.svg"></div>
+                                    <span>4.99</span>
+                                </div>
+                                <span class="address-text-info">Пункт выдачи</span>
+                            </div>
                         </div>
-                        <div class="icon-card"><img src="./images/maestro_icon.svg"></div>
-                        <span id="card-number-maestro">1234 56•• •••• 1231</span>
+                        <div class="icon-20-20">
+                            <svg class="basket-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.5 3C0.5 2.72386 0.723858 2.5 1 2.5H15C15.2761 2.5 15.5 2.72386 15.5 3C15.5 3.27614 15.2761 3.5 15 3.5H1C0.723858 3.5 0.5 3.27614 0.5 3Z" fill="black"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.4584 2.5H14.5059L13.6411 13.6926C13.5405 14.9947 12.4546 16 11.1486 16H4.84639C3.54299 16 2.45829 14.9986 2.35435 13.6994L1.4584 2.5ZM2.5416 3.5L3.35117 13.6196C3.41353 14.3992 4.06435 15 4.84639 15H11.1486C11.9322 15 12.5837 14.3968 12.6441 13.6155L13.4256 3.5H2.5416Z" fill="black"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11 3.5H5V1.46875C5 0.657582 5.65758 0 6.46875 0H9.53125C10.3424 0 11 0.657582 11 1.46875V3.5ZM6.46875 1C6.20987 1 6 1.20987 6 1.46875V2.5H10V1.46875C10 1.20987 9.79013 1 9.53125 1H6.46875Z" fill="black"/>
+                            </svg>    
+                        </div>
                     </div>
                 </div>
             </div>
-    
-            <button class="enter-btn" id="choose-window-delivery">Выбрать</button>
+            <div class="enter-btn-container">
+                <button class="enter-btn" id="choose-window-delivery">Выбрать</button>
+            </div>
+            
         </div>
         <div class="overlay"></div>
     </div>

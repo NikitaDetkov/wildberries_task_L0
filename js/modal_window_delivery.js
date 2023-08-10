@@ -5,10 +5,11 @@ let backgroundWindowDelivery = document.querySelector('#background-window-delive
 let openBtnWindowDelivery1 = document.querySelector('#open-window-delivery-1');
 let openBtnWindowDelivery2 = document.querySelector('#open-window-delivery-2');
 
-let deliveryNumberHtml1 = document.querySelector('#delivery-number-1');
-let deliveryNumberHtml2 = document.querySelector('#delivery-number-2');
-let deliveryImageHtml1 = document.querySelector('#delivery-image-1');
-let deliveryImageHtml2 = document.querySelector('#delivery-image-2');
+let addressFieldHtml1 = document.querySelector('#address-field-1');
+let addressFieldHtml2 = document.querySelector('#address-field-2');
+
+let methodFieldHtml1 = document.querySelector('#method-field-1');
+let methodFieldHtml2 = document.querySelector('#method-field-2');
 
 backgroundWindowDelivery.addEventListener('click', () => {
     modalWindowDelivery.classList.remove('show');
@@ -20,15 +21,23 @@ closeBtnWindowDelivery.addEventListener('click', () => {
 
 chooseBtnWindowDelivery.addEventListener('click', () => {
 
-    // const typeOfCard = document.querySelector('input[name="card"]:checked').value;
-    // const cardNumber = document.querySelector('#card-number-' + typeOfCard).innerHTML;
-    // const cardImage = `<img src="./images/${typeOfCard}_icon.svg">`;
+    const numberAddress = document.querySelector('input[name="address"]:checked').value;
+    const textAddress = document.querySelector('#text-' + numberAddress).innerHTML;
+    const numberMethodDelivery = document.querySelector('input[name="method"]:checked').value;
+    const textMethodDelivery = document.querySelector('#text-' + numberMethodDelivery).innerHTML;
 
-    // cardNumberHtml1.innerHTML = cardNumber;
-    // cardNumberHtml2.innerHTML = cardNumber;
+    addressFieldHtml1.innerHTML = textAddress;
+    addressFieldHtml2.innerHTML = textAddress;
 
-    // cardImageHtml1.innerHTML = cardImage;
-    // cardImageHtml2.innerHTML = cardImage;
+    const textMethodField2 = numberMethodDelivery === 'method-1' 
+        ? textMethodDelivery.slice(2, textMethodDelivery.length)
+        : textMethodDelivery.toUpperCase();
+
+
+
+    methodFieldHtml1.innerHTML = capitalizeFLetter(textMethodField2);
+    methodFieldHtml2.innerHTML = 'Доставка ' + textMethodDelivery.toLocaleLowerCase();
+
     modalWindowDelivery.classList.remove('show');
 });
 
@@ -37,5 +46,12 @@ openBtnWindowDelivery1.addEventListener('click', () => {
 });
 
 openBtnWindowDelivery2.addEventListener('click', () => {
-    modalWindowCard.classList.add('show');
+    modalWindowDelivery.classList.add('show');
 });
+
+function capitalizeFLetter(text) {
+    const firstLetter = text[0];
+    const restText = text.slice(1, text.length);
+    
+    return firstLetter.toUpperCase() + restText.toLocaleLowerCase();
+}

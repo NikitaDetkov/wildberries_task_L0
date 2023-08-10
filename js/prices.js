@@ -35,16 +35,28 @@ const html_discount_sum = document.querySelector('#discount_sum');
 const payment_checkbox = document.querySelector('#payment_checkbox');
 const order_button = document.querySelector('#order_button');
 
+// Получение элементов DOM-дерева для формирования товаров в доставке
+// Даты доставки
+const htmlDeliveryDate1 = document.querySelector("#delivery-date-1");
+const htmlDeliveryDate2 = document.querySelector("#delivery-date-2");
+// Контейнеры для товаров в доставке
+const htmlDeliveryBox1 = document.querySelector("#delivery-box-1");
+const htmlDeliveryBox2 = document.querySelector("#delivery-box-2");
+// Товары в доставке
+const htmlDeliveryProduct1 = document.querySelector("#delivery-product-1");
+const htmlDeliveryProduct21 = document.querySelector("#delivery-product-2-1");
+const htmlDeliveryProduct3 = document.querySelector("#delivery-product-3");
+const htmlDeliveryProduct22 = document.querySelector("#delivery-product-2-2");
+
 // Установить в DOM цены на товары
 setPrices();
 
 // Установить в DOM итоговые цены и скидку
 setPricesSum();
 
-
 // Слушатели событий и функции =============================================
 
-// Слушатель событий
+// Слушатель событий на checkbox для изменения кнопки "Заказать"
 payment_checkbox.addEventListener('change', () => {
     changeOrderButton();
 })
@@ -58,12 +70,14 @@ checkbox_all.addEventListener('change', () => {
         }
         setPricesSum();
         changeOrderButton();
+        changeDeliveryBasket();
     } else {
         for (let i = 0; i < 3; i++) {
             checkboxes[i].checked = false;
         }
         setPricesSum();
         changeOrderButton();
+        changeDeliveryBasket();
     }
 })
 
@@ -74,8 +88,48 @@ for (let i = 0; i < 3; i++) {
         checkbox_all.checked = checkCheckboxs();
         setPricesSum();
         changeOrderButton();
+        changeDeliveryBasket();
     })
 }
+
+// Функция. Изменяет состав корзины в доставке.
+// Устанавливает или удаляет товары из доставки в соответствии с
+// выбором из корзины (checkboxes)
+function changeDeliveryBasket() {
+    if (checkboxes[0].checked || checkboxes[1].checked || checkboxes[2].checked) {
+        htmlDeliveryBox1.classList.remove('hide');
+        htmlDeliveryDate1.classList.remove('hide');
+    } else {
+        htmlDeliveryBox1.classList.add('hide');
+        htmlDeliveryDate1.classList.add('hide');
+        htmlDeliveryBox2.classList.add('hide');
+        htmlDeliveryDate2.classList.add('hide');
+    }
+
+    if (checkboxes[0].checked) {
+        htmlDeliveryProduct1.classList.remove('hide');
+    } else {
+        htmlDeliveryProduct1.classList.add('hide');
+    }
+
+    if (checkboxes[1].checked) {
+        htmlDeliveryBox2.classList.remove('hide');
+        htmlDeliveryDate2.classList.remove('hide');
+        htmlDeliveryProduct21.classList.remove('hide');
+        htmlDeliveryProduct22.classList.remove('hide');
+    } else {
+        htmlDeliveryBox2.classList.add('hide');
+        htmlDeliveryDate2.classList.add('hide');
+        htmlDeliveryProduct21.classList.add('hide');
+        htmlDeliveryProduct22.classList.add('hide');
+    }
+
+    if (checkboxes[2].checked) {
+        htmlDeliveryProduct3.classList.remove('hide');
+    } else {
+        htmlDeliveryProduct3.classList.add('hide');
+    }
+} 
 
 // Изменить в DOM значение в кнопке заказа
 function changeOrderButton() {

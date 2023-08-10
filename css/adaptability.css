@@ -193,9 +193,52 @@
     .pink-btn-box {
         margin-top: 8px;
     }
+}
 
+
+@media(max-width: 600px) {
     .modal-window {
         border-radius: 0;
+        width: 100%;
+        height: 100%;
     }
 
+    .modal-window-header{
+        padding: 16px 11px 13px 16px;
+    }
+
+    .modal-window-content {
+        flex-grow: 1;
+        padding: 0px 16px;
+    }
+
+    .modal-window-content.delivery-content {
+        padding: 0;
+    }
+
+    .modal-window h3 {
+        font-weight: 600;
+    }
+
+    .method-container {
+        padding: 0 16px;
+    }
+
+    .address-container {
+        padding: 0 14px;
+    }
+
+    .enter-btn-container {
+        display: flex;
+    }
+
+    .enter-btn {
+        width: 100% !important;
+        margin: 16px !important;
+    }
+
+    .form_radio_btn label {
+        height: 40px;
+        border-radius: 20px;
+    }
 }

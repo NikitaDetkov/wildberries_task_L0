@@ -241,3 +241,7 @@ h5 {
     letter-spacing: 0em;
     text-align: center;
 }
+
+.cursor-pointer {
+    cursor: pointer;
+}

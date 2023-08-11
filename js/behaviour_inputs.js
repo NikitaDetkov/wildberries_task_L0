@@ -5,7 +5,7 @@ const nameField = {
     comment: document.querySelector('#name_comment'),
     error: document.querySelector('#name_error'),
     border: document.querySelector('#name_border'),
-    format: /^[а-яА-Я\-]+$/,
+    format: /^[А-Я]{1}[а-яА-Я\-]+$/,
     isError: false,
 };
 // Фамилия
@@ -14,7 +14,7 @@ const surnameField = {
     comment: document.querySelector('#surname_comment'),
     error: document.querySelector('#surname_error'),
     border: document.querySelector('#surname_border'),
-    format: /^[а-яА-Я\-]+$/,
+    format: /^[А-Я]{1}[а-яА-Я\-]+$/,
     isError: false,
 };
 // Email
@@ -44,6 +44,8 @@ const innField = {
     format: /^[0-9]{14}$/,
     isError: false,
 };
+
+// Кнопка отправки из DOM
 const buttonOrder = document.querySelector('#order_button');
 
 addEventForField(nameField);
@@ -52,6 +54,8 @@ addEventForField(emailField);
 addEventForField(innField);
 addEventForFieldPhone(phoneField);
 
+// Слушатель событий для кнопки отправки для
+// вызова ошибки в случае, когда есть незаполненные поля
 buttonOrder.addEventListener('click', () => {
     if (nameField.input.value === '') {
         setError(nameField);
@@ -173,6 +177,9 @@ function removeError(field) {
     field.isError = false;
 }
 
+// Добаляет пробелы между цифрами номера телефона
+// Принимет строку номера телефона (возможно, с пробелами)
+// Возвращает строку с пробелами
 function addSpaces(value) {
     value = value.replaceAll(' ', '');
     value = value.split('');

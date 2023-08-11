@@ -1,26 +1,30 @@
+// Получение элементов из DOM
+// Модальное окно доставки
 let modalWindowDelivery= document.querySelector('#modal-window-delivery');
+// Кнопка закрытия
 let closeBtnWindowDelivery = document.querySelector('#close-window-delivery');
+// Кнопка выбора способа доставки
 let chooseBtnWindowDelivery = document.querySelector('#choose-window-delivery');
+// Фон за модальным окном (по нажатию закрывает модально окно)
 let backgroundWindowDelivery = document.querySelector('#background-window-delivery');
+// Кнопки, открывающие модальное окно
 let openBtnWindowDelivery1 = document.querySelector('#open-window-delivery-1');
 let openBtnWindowDelivery2 = document.querySelector('#open-window-delivery-2');
-
+// Элементы, значения которых требуется менять 
 let addressFieldHtml1 = document.querySelector('#address-field-1');
 let addressFieldHtml2 = document.querySelector('#address-field-2');
-
 let methodFieldHtml1 = document.querySelector('#method-field-1');
 let methodFieldHtml2 = document.querySelector('#method-field-2');
-
+// Закрыть модальное окно при нажатии на фон
 backgroundWindowDelivery.addEventListener('click', () => {
     modalWindowDelivery.classList.remove('show');
 });
-
+// Закрыть модальное окно при нажатии на кнопку закрытия
 closeBtnWindowDelivery.addEventListener('click', () => {
     modalWindowDelivery.classList.remove('show');
 });
-
+// Устанавливает новые значения в DOM при нажатии кнопки выбора
 chooseBtnWindowDelivery.addEventListener('click', () => {
-
     const numberAddress = document.querySelector('input[name="address"]:checked').value;
     const textAddress = document.querySelector('#text-' + numberAddress).innerHTML;
     const numberMethodDelivery = document.querySelector('input[name="method"]:checked').value;
@@ -33,22 +37,20 @@ chooseBtnWindowDelivery.addEventListener('click', () => {
         ? textMethodDelivery.slice(2, textMethodDelivery.length)
         : textMethodDelivery.toUpperCase();
 
-
-
     methodFieldHtml1.innerHTML = capitalizeFLetter(textMethodField2);
     methodFieldHtml2.innerHTML = 'Доставка ' + textMethodDelivery.toLocaleLowerCase();
 
     modalWindowDelivery.classList.remove('show');
 });
-
+// Закрыть модальное окно при нажатии на кнопку открытия
 openBtnWindowDelivery1.addEventListener('click', () => {
     modalWindowDelivery.classList.add('show');
 });
-
+// Закрыть модальное окно при нажатии на кнопку открытия
 openBtnWindowDelivery2.addEventListener('click', () => {
     modalWindowDelivery.classList.add('show');
 });
-
+// Функция
 function capitalizeFLetter(text) {
     const firstLetter = text[0];
     const restText = text.slice(1, text.length);

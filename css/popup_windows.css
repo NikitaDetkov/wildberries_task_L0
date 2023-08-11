@@ -79,6 +79,7 @@
     right: 8px;
 }
 
-#popup-info-free-2 {
-    top: 22px;
+.popup-info-free-2 {
+    margin-left: -62px;
+    top: 14px;
 }

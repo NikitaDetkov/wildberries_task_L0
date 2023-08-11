@@ -129,7 +129,7 @@ function addEventForFieldPhone(field) {
             removeError(field);
         } else {
 
-            field.input.value = addSpaces(field.input.value);
+            field.input.value = addSpacesPhone(field.input.value);
 
             if (field.format.test(field.input.value)) {
                 removeError(field);
@@ -180,7 +180,7 @@ function removeError(field) {
 // Добаляет пробелы между цифрами номера телефона
 // Принимет строку номера телефона (возможно, с пробелами)
 // Возвращает строку с пробелами
-function addSpaces(value) {
+function addSpacesPhone(value) {
     value = value.replaceAll(' ', '');
     value = value.split('');
     let valueWithSpaces = [];

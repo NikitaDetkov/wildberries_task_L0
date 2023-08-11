@@ -196,7 +196,7 @@ h5 {
 
 .green-text {
     color: rgba(12, 180, 119, 1);
-    border-bottom: 2px dashed rgba(12, 180, 119, 0.2);
+    border-bottom: 1px dashed rgba(12, 180, 119, 0.2);
     cursor: pointer;
 }
 
@@ -221,6 +221,11 @@ h5 {
 .quantity-basket {
     top: -4px;
     left: 36px;
+}
+
+.quantity-basket-navbar {
+    top: -5px;
+    right: -7px;
 }
 
 .quantity-product {

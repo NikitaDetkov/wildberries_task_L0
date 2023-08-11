@@ -40,10 +40,16 @@
     margin-left: 2px;
 }
 
-.popup-info-free {
+.popup-info-free-1 {
+    padding: 10px 16px 14px 16px;
+    max-width: 550px;
+}
+
+.popup-info-free-2 {
     padding: 10px 16px 14px 16px;
     min-width: 256px;
 }
+
 
 .popup-info-discount {
     padding: 11px 16px 13px 16px;

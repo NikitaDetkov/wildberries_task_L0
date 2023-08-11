@@ -1,19 +1,19 @@
 // Старые и новые цены
 const prices = [522, 2100047, 494];
-const old_prices = [1051, 2300047, 950];
-let price_sum = 0;
-let old_price_sum = 0;
-let discount_sum = 0;
+const oldPrices = [1051, 2300047, 950];
+let priceSum = 0;
+let oldPriceSum = 0;
+let discountSum = 0;
 
 // Получение элементов DOM-дерева для новых цен
-const html_prices = [
+const htmlPrices = [
     document.querySelector('#price_1'),
     document.querySelector('#price_2'),
     document.querySelector('#price_3')
 ];
 
 // Получение элементов DOM-дерева для старых цен
-const html_old_prices = [
+const htmlOldPrices = [
     document.querySelector('#old_price_1'),
     document.querySelector('#old_price_2'),
     document.querySelector('#old_price_3')
@@ -25,15 +25,15 @@ const checkboxes = [
     document.querySelector('#product_2'),
     document.querySelector('#product_3')
 ]
-const checkbox_all = document.querySelector('#products_all');
+const checkboxAll = document.querySelector('#products_all');
 
 // Получение элементов DOM-дерева для итоговых цен и скидки
-const html_price_sum = document.querySelector("#price_sum");
-const html_old_price_sum = document.querySelector("#old_price_sum");
-const html_discount_sum = document.querySelector('#discount_sum');
+const htmlPriceSum = document.querySelector("#price_sum");
+const htmlOldPriceSum = document.querySelector("#old_price_sum");
+const htmlDiscountSum = document.querySelector('#discount_sum');
 
-const payment_checkbox = document.querySelector('#payment_checkbox');
-const order_button = document.querySelector('#order_button');
+const paymentCheckbox = document.querySelector('#payment_checkbox');
+const orderButton = document.querySelector('#order_button');
 
 // Получение элементов DOM-дерева для формирования товаров в доставке
 // Даты доставки
@@ -57,14 +57,14 @@ setPricesSum();
 // Слушатели событий и функции =============================================
 
 // Слушатель событий на checkbox для изменения кнопки "Заказать"
-payment_checkbox.addEventListener('change', () => {
+paymentCheckbox.addEventListener('change', () => {
     changeOrderButton();
 })
 
 // Выбрать все checkbox, если выбран главный,
 // или убрать, если убран главный
-checkbox_all.addEventListener('change', () => {
-    if (checkbox_all.checked ) {
+checkboxAll.addEventListener('change', () => {
+    if (checkboxAll.checked ) {
         for (let i = 0; i < 3; i++) {
             checkboxes[i].checked = true;
         }
@@ -85,7 +85,7 @@ checkbox_all.addEventListener('change', () => {
 // или убрать, если выбраны не все 
 for (let i = 0; i < 3; i++) {
     checkboxes[i].addEventListener('change', () => {
-        checkbox_all.checked = checkCheckboxs();
+        checkboxAll.checked = checkCheckboxs();
         setPricesSum();
         changeOrderButton();
         changeDeliveryBasket();
@@ -133,10 +133,10 @@ function changeDeliveryBasket() {
 
 // Изменить в DOM значение в кнопке заказа
 function changeOrderButton() {
-    if (payment_checkbox.checked) {
-        order_button.innerHTML = `Оплатить ${html_price_sum.innerHTML}`;
+    if (paymentCheckbox.checked) {
+        orderButton.innerHTML = `Оплатить ${htmlPriceSum.innerHTML}`;
     } else {
-        order_button.innerHTML = 'Заказать';
+        orderButton.innerHTML = 'Заказать';
     }
 }
 
@@ -144,55 +144,55 @@ function changeOrderButton() {
 // (для НЕРЕАЛИЗОВАННОГО случая, если мы будем менять количество товаров)
 function setPrices() {
     for (let i = 0; i < 3; i++) {
-        setNumber(html_prices[i], prices[i]);
-        setNumber(html_old_prices[i], old_prices[i]);
+        setNumber(htmlPrices[i], prices[i]);
+        setNumber(htmlOldPrices[i], oldPrices[i]);
     }
 }
 
 // Установка в DOM итоговых цен и скидки
 function setPricesSum() {
-    price_sum = calculateSum(prices);
-    old_price_sum = calculateSum(old_prices);
-    discount_sum = old_price_sum - price_sum;
+    priceSum = calculateSum(prices);
+    oldPriceSum = calculateSum(oldPrices);
+    discountSum = oldPriceSum - priceSum;
 
-    setNumber(html_price_sum, price_sum);
-    setNumber(html_old_price_sum, old_price_sum);
-    setNumber(html_discount_sum, discount_sum)
+    setNumber(htmlPriceSum, priceSum);
+    setNumber(htmlOldPriceSum, oldPriceSum);
+    setNumber(htmlDiscountSum, discountSum)
 }
 
 // Добавление пробелов через каждые три символа в строке из цифр
 // Принимает: строку из цифр без пробелов
 // Возвращает: строку из цифр с пробелами через 3 символа
-function addSpaces(price_str) {
-    let price_arr = [];
+function addSpaces(priceStr) {
+    let priceArr = [];
 
-    for (let i = 0; i < price_str.length; i++) {
-        price_arr.push(price_str[i]);
-        if ((price_str.length - i - 1) % 3 === 0 && i !== price_str.length - 1) {
-            price_arr.push(' ');
+    for (let i = 0; i < priceStr.length; i++) {
+        priceArr.push(priceStr[i]);
+        if ((priceStr.length - i - 1) % 3 === 0 && i !== priceStr.length - 1) {
+            priceArr.push(' ');
         }
     }
 
-    return price_arr.join('');
+    return priceArr.join('');
 }
 
 // Установка числового значения num_elem 
 // в html-элемент в html-elem 
-function setNumber(html_elem, num_elem) {
-    let num_elem_str = String(num_elem);
-    if (num_elem_str.length > 4) {
-        num_elem_str = addSpaces(num_elem_str);
+function setNumber(htmlElem, numElem) {
+    let numElemStr = String(numElem);
+    if (numElemStr.length > 4) {
+        numElemStr = addSpaces(numElemStr);
     }    
-    html_elem.innerHTML = num_elem_str;
+    htmlElem.innerHTML = numElemStr;
 }
 
 // Вычисление суммы цены выбранных соваров
 // Возвращает сумму товаров, где выбран checkbox
-function calculateSum(prices_arr) {
+function calculateSum(pricesArr) {
     let sum = 0;
     for (let i = 0; i < 3; i ++) {
         if (checkboxes[i].checked) {
-            sum += prices_arr[i];
+            sum += pricesArr[i];
         }
     }
     return sum;

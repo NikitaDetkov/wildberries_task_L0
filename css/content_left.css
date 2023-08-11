@@ -64,7 +64,6 @@
     display: flex;
     padding-top: 12px;
     gap: 16px;
-
     width: 397px;
 }
 
@@ -169,18 +168,16 @@
 
 .counter-box-plus {
     top: 10px;
-    left: 73px;
+    right: 4px;
     padding: 2px 7px 6px 8px;
 }
 
 .counter-box-elem {
-    width: 9px;
-    height: 16px;
-    top: 2px;
-    left: 8px;
-
+    display: flex;
+    justify-content: center;
+    font-family: 'Segoe UI', sans-serif;
     font-size: 20px;
-    line-height: 24px;
+    line-height: 16px;
     letter-spacing: -0.01em;
     text-align: center;
 }
@@ -189,15 +186,16 @@
     position: absolute;
     top: 8px;
     left: 28px;
+    line-height: 0px;
 }
 
 .counter-value {
     border: 0;
     background-color: white;
     width: 44px;
-    height: 23;
+    height: 23px;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 23px;
     text-align: center;
     font-family: 'Segoe UI', sans-serif;
     font-weight: 400;
@@ -216,19 +214,27 @@
     gap: 16px;
 }
 
-.basket-icon:hover {
+.icon-btn {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-btn:hover {
     cursor: pointer;
 }
 
-.basket-icon:hover path {
+.icon-btn:hover .basket-icon path {
     fill: rgba(245, 81, 35, 1);
 }
 
-.heart-icon:hover {
+.icon-btn:hover:hover {
     cursor: pointer;
 }
 
-.heart-icon:hover path {
+.icon-btn:hover .heart-icon path {
     fill: rgba(203, 17, 171, 1);
 }
 
@@ -257,7 +263,7 @@
     line-height: 16px;
     color: rgba(151, 151, 175, 1);
     width: max-content;
-    border-bottom: 2px dashed rgba(0, 0, 0, 0.2);
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
     text-decoration: 1px line-through solid rgba(160, 160, 164, 1);
     cursor: pointer;
 }

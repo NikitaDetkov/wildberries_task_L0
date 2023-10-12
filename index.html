@@ -66,10 +66,11 @@
                 <div class="basket">
                     <div class="basket-elem">
                         <div class="d-flex j-c-space-between vertical-center">
-                            <div class="d-flex vertical-center">
+                            <div class="d-flex vertical-center" id="products_all-wrapper">
                                 <input class="checkbox" id="products_all" type="checkbox">
                                 <label for="products_all">Выбрать все</label>
                             </div>
+                            <span class="basket-elem__header all-products-price" id="all-products-price"></span>
                             <div class="icon-20-20 cursor-pointer" id="hiding_button_1"><img src="./images/arrow.svg"></div>
                         </div>
                         <div class="products-border"></div>
@@ -113,17 +114,17 @@
                                 <div class="product-right-elem">
                                     <div class="quantity-container">
                                         <div class="counter">
-                                            <button class="counter-box-btn counter-box-minus">
-                                                <div class="counter-box-elem color-gray">−</div>
+                                            <button class="counter-box-btn counter-box-minus" id="btn-minus-1">
+                                                <div class="counter-box-elem">−</div>
                                             </button>
                                             <div class="counter-value-box">
-                                                <input class="counter-value" type="text" name="counter" value="1" disabled>
+                                                <input class="counter-value" id="counter-value-1" type="text" name="counter" value="1" disabled>
                                             </div>
-                                            <button class="counter-box-btn counter-box-plus">
+                                            <button class="counter-box-btn counter-box-plus" id="btn-plus-1">
                                                 <div class="counter-box-elem">+</div>
                                             </button>
                                         </div>
-                                        <span class="limiter">Осталось 2 шт.</span>
+                                        <span class="limiter" id="limiter-1">Осталось 2 шт.</span>
                                         <div class="icons-container">
                                             <div class="icon-btn">
                                                 <svg class="heart-icon" width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -196,17 +197,18 @@
                                 <div class="product-right-elem">
                                     <div class="quantity-container">
                                         <div class="counter">
-                                            <button class="counter-box-btn counter-box-minus">
+                                            <button class="counter-box-btn counter-box-minus" id="btn-minus-2">
                                                 <div class="counter-box-elem">−</div>
                                             </button>
                                             <div class="counter-value-box">
-                                                <input class="counter-value" type="text" name="counter" value="200" disabled>
+                                                <input class="counter-value" id="counter-value-2" type="text" name="counter" value="200" disabled>
                                             </div>
                                             
-                                            <button class="counter-box-btn counter-box-plus">
+                                            <button class="counter-box-btn counter-box-plus" id="btn-plus-2">
                                                 <div class="counter-box-elem">+</div>
                                             </button>
                                         </div>
+                                        <span class="limiter" id="limiter-2"></span>
                                         <div class="icons-container">
                                             <div class="icon-btn">
                                                 <svg class="heart-icon" width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -277,18 +279,18 @@
                                 <div class="product-right-elem">
                                     <div class="quantity-container">
                                         <div class="counter">
-                                            <button class="counter-box-btn counter-box-minus">
+                                            <button class="counter-box-btn counter-box-minus" id="btn-minus-3">
                                                 <div class="counter-box-elem">−</div>
                                             </button>
                                             <div class="counter-value-box">
-                                                <input class="counter-value" type="text" name="counter" value="2" disabled>
+                                                <input class="counter-value" id="counter-value-3" type="text" name="counter" value="2" disabled>
                                             </div>
                                             
-                                            <button class="counter-box-btn counter-box-plus">
-                                                <div class="counter-box-elem color-gray">+</div>
+                                            <button class="counter-box-btn counter-box-plus" id="btn-plus-3">
+                                                <div class="counter-box-elem">+</div>
                                             </button>
                                         </div>
-                                        <span class="limiter">Осталось 2 шт.</span>
+                                        <span class="limiter" id="limiter-3">Осталось 2 шт.</span>
                                         <div class="icons-container">
                                             <div class="icon-btn">
                                                 <svg class="heart-icon" width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -326,7 +328,7 @@
                     </div>
                     <div class="basket-elem">
                         <div class="d-flex j-c-space-between vertical-center">
-                            <span>Отсутствуют &middot; 3 товара</span>
+                            <span class="basket-elem__header">Отсутствуют &middot; 3 товара</span>
                             <div class="icon-20-20 cursor-pointer" id="hiding_button_2"><img src="./images/arrow.svg"></div>
                         </div>
                         <div class="products-border"></div>
@@ -439,7 +441,7 @@
                                 <h3>Способ доставки</h3>
                                 <div class="change-btn" id="open-window-delivery-1">Изменить</div>
                             </div>
-                            <div class="delivery-container">
+                            <div class="delivery-container" id="delivery-container">
                                 <span class="delivery-header" id="method-field-1">Пунк выдачи</span>
                                 <div>
                                     <span id="address-field-1">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
@@ -451,27 +453,9 @@
                                 </div>
                                 <span class="delivery-header">Стоимость доставки</span>
                                 <span class="mobile-mb-16">Бесплатно</span>
-                                <span class="delivery-header mobile-mb-12 hide" id="delivery-date-1">5—6 февраля</span>
-                                <div class="images-container mobile-mb-24 hide" id="delivery-box-1">
-                                    <div class="image-box hide" id="delivery-product-1">
-                                        <img style="height: 100%;" src="./images/product_1.png">
-                                    </div>
-                                    <div class="image-box hide p-relative" id="delivery-product-2-1">
-                                        <img style="height: 100%;" src="./images/product_2.png">
-                                        <div class="quantity quantity-product">184</div>
-                                    </div>
-                                    <div class="image-box hide p-relative" id="delivery-product-3">
-                                        <img style="height: 100%;" src="./images/product_3.png">
-                                        <div class="quantity quantity-product">2</div>
-                                    </div>
-                                </div>
-                                <span class="delivery-header mobile-mb-12 hide" id="delivery-date-2">7—8 февраля</span>
-                                <div class="images-container hide" id="delivery-box-2">
-                                    <div class="image-box hide p-relative" id="delivery-product-2-2">
-                                        <img style="height: 100%;" src="./images/product_2.png">
-                                        <div class="quantity quantity-product">16</div>
-                                    </div>
-                                </div>
+
+                                
+
                             </div>
                             <div class="rejection-info">
                                 <div class="icon-22-22"><img src="./images/sber.svg"></div>

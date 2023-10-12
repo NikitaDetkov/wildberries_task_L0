@@ -51,7 +51,7 @@ const buttonOrder = document.querySelector('#order_button');
 addEventForField(nameField);
 addEventForField(surnameField);
 addEventForField(emailField);
-addEventForField(innField);
+addEventForFieldForInn(innField);
 addEventForFieldPhone(phoneField);
 
 // Слушатель событий для кнопки отправки для
@@ -98,7 +98,7 @@ function addEventForField(field) {
         }
     });
 
-    // Слушатель событий при отпускании кнопки
+    // Слушатель событий вводе
     // Скрывается комментарий, если строка пустая
     // Удаляется ошибка, если строка пустая или проходит валидацию
     field.input.addEventListener('input', () => {
@@ -117,13 +117,11 @@ function addEventForField(field) {
     });
 }
 
-// Добавление слушателей событий 
+// Добавление слушателей событий для поля Телефон
 // Принимает объект с полями
 // Добавляет слушатели событий для поля input
 function addEventForFieldPhone(field) {
-
-    const onlyNumbersReg = /[а-яА-Яa-zA-Z]/g; 
-
+    // Слушатель событий для изменения
     field.input.addEventListener('change', () => {
         if (field.input.value === '') {
             removeError(field);
@@ -139,9 +137,49 @@ function addEventForFieldPhone(field) {
         }
     });
     
+    // Слушатель событий для ввода
     field.input.addEventListener('input', (event) => {
+        const onlyNumbersReg = /[а-яА-Яa-zA-Z]/g; 
+        field.input.value = field.input.value.replace(onlyNumbersReg, '');
 
-        field.input.value = field.input.value.replace(onlyNumbersReg, '')
+        if (field.input.value === '') {
+            field.comment.style.opacity = '0';
+            removeError(field);
+        } else {
+            if (field.comment.style.opacity == 0) {
+                field.comment.style.opacity = '1';
+            }  
+            if (field.format.test(field.input.value)) {
+                removeError(field);
+            }
+        }
+    });
+}
+
+// Добавление слушателей событий для поля ИНН
+// Принимает объект с полями
+// Добавляет слушатели событий для поля input
+function addEventForFieldForInn(field) {
+    // Слушатель событий для изменения
+    field.input.addEventListener('change', () => {
+        if (field.input.value === '') {
+            removeError(field);
+        } else {
+            if (field.format.test(field.input.value)) {
+                removeError(field);
+            } else {
+                setError(field);
+            }
+        }
+    });
+
+    // Слушатель событий для ввода
+    // Скрывается комментарий, если строка пустая
+    // Удаляется ошибка, если строка пустая или проходит валидацию
+    // Запрет ввода букв
+    field.input.addEventListener('input', () => {
+        const onlyNumbersReg = /[^0-9]/g;
+        field.input.value = field.input.value.replace(onlyNumbersReg, '');
 
         if (field.input.value === '') {
             field.comment.style.opacity = '0';

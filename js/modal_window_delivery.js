@@ -23,11 +23,19 @@ backgroundWindowDelivery.addEventListener('click', () => {
 closeBtnWindowDelivery.addEventListener('click', () => {
     modalWindowDelivery.classList.remove('show');
 });
+
+// Текущий адресс
+let currentAddress = document.querySelector('input[name="address"]:checked').value;
+// Текущий способ доставки
+let currentMethodDelivery = document.querySelector('input[name="method"]:checked').value;
+
 // Устанавливает новые значения в DOM при нажатии кнопки выбора
 chooseBtnWindowDelivery.addEventListener('click', () => {
     const numberAddress = document.querySelector('input[name="address"]:checked').value;
+    currentAddress = numberAddress; // Запомнить текущий адресс
     const textAddress = document.querySelector('#text-' + numberAddress).innerHTML;
     const numberMethodDelivery = document.querySelector('input[name="method"]:checked').value;
+    currentMethodDelivery = numberMethodDelivery; // Запомнить текущий способ доставки
     const textMethodDelivery = document.querySelector('#text-' + numberMethodDelivery).innerHTML;
 
     addressFieldHtml1.innerHTML = textAddress;
@@ -42,12 +50,20 @@ chooseBtnWindowDelivery.addEventListener('click', () => {
 
     modalWindowDelivery.classList.remove('show');
 });
-// Закрыть модальное окно при нажатии на кнопку открытия
+// Открыть модальное окно при нажатии на кнопку открытия
 openBtnWindowDelivery1.addEventListener('click', () => {
+    // Установить в радиокнопки текущий способ доставки и дату
+    document.querySelector(`#${currentMethodDelivery}`).checked = true;
+    document.querySelector(`#${currentAddress}`).checked = true;
+
     modalWindowDelivery.classList.add('show');
 });
-// Закрыть модальное окно при нажатии на кнопку открытия
+// Открыть модальное окно при нажатии на кнопку открытия
 openBtnWindowDelivery2.addEventListener('click', () => {
+    // Установить в радиокнопки текущий способ доставки и дату
+    document.querySelector(`#${currentMethodDelivery}`).checked = true;
+    document.querySelector(`#${currentAddress}`).checked = true;
+
     modalWindowDelivery.classList.add('show');
 });
 // Функция

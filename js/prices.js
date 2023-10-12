@@ -1,22 +1,46 @@
-// Старые и новые цены
-const prices = [522, 2100047, 494];
-const oldPrices = [1051, 2300047, 950];
-let priceSum = 0;
-let oldPriceSum = 0;
-let discountSum = 0;
+// Массив с продуктами
+const products = [
+    {
+        counter: 1,
+        maxQuantity: 2,
+        oldPriceOne: 1051,
+        discount: 0.503,
+        btnPlus: document.querySelector('#btn-plus-1'), 
+        btnMinus: document.querySelector('#btn-minus-1'), 
+        inputCounter: document.querySelector('#counter-value-1'),
+    },
+    {
+        counter: 200,
+        maxQuantity: 300,
+        oldPriceOne: 11500.235,
+        discount: 0.0869547,
+        btnPlus: document.querySelector('#btn-plus-2'), 
+        btnMinus: document.querySelector('#btn-minus-2'),
+        inputCounter: document.querySelector('#counter-value-2'), 
+    },
+    {
+        counter: 2,
+        maxQuantity: 2,
+        oldPriceOne: 475,
+        discount: 0.48,
+        btnPlus: document.querySelector('#btn-plus-3'), 
+        btnMinus: document.querySelector('#btn-minus-3'), 
+        inputCounter: document.querySelector('#counter-value-3'),
+    },
+];
 
 // Получение элементов DOM-дерева для новых цен
 const htmlPrices = [
     document.querySelector('#price_1'),
     document.querySelector('#price_2'),
-    document.querySelector('#price_3')
+    document.querySelector('#price_3'),
 ];
 
 // Получение элементов DOM-дерева для старых цен
 const htmlOldPrices = [
     document.querySelector('#old_price_1'),
     document.querySelector('#old_price_2'),
-    document.querySelector('#old_price_3')
+    document.querySelector('#old_price_3'),
 ];
 
 // Получение элементов DOM-дерева для checkboxes товаров
@@ -26,6 +50,9 @@ const checkboxes = [
     document.querySelector('#product_3')
 ]
 const checkboxAll = document.querySelector('#products_all');
+
+// Счетчик доставок
+let counterDeliveryBoxes = 0;
 
 // Получение элементов DOM-дерева для итоговых цен и скидки
 const htmlPriceSum = document.querySelector("#price_sum");
@@ -51,10 +78,15 @@ const htmlDeliveryProduct22 = document.querySelector("#delivery-product-2-2");
 // Установить в DOM цены на товары
 setPrices();
 
+// Установить в дом состояния счетчиков товаров
+for (let i = 0; i < products.length; i++) {
+    setProductCounter(i)
+}
+
 // Установить в DOM итоговые цены и скидку
 setPricesSum();
 
-// Слушатели событий и функции =============================================
+// Слушатели событий =============================================
 
 // Слушатель событий на checkbox для изменения кнопки "Заказать"
 paymentCheckbox.addEventListener('change', () => {
@@ -68,16 +100,12 @@ checkboxAll.addEventListener('change', () => {
         for (let i = 0; i < 3; i++) {
             checkboxes[i].checked = true;
         }
-        setPricesSum();
-        changeOrderButton();
-        changeDeliveryBasket();
+        updateBasket();
     } else {
         for (let i = 0; i < 3; i++) {
             checkboxes[i].checked = false;
         }
-        setPricesSum();
-        changeOrderButton();
-        changeDeliveryBasket();
+        updateBasket();
     }
 })
 
@@ -86,50 +114,104 @@ checkboxAll.addEventListener('change', () => {
 for (let i = 0; i < 3; i++) {
     checkboxes[i].addEventListener('change', () => {
         checkboxAll.checked = checkCheckboxs();
-        setPricesSum();
-        changeOrderButton();
-        changeDeliveryBasket();
+        updateBasket();
     })
 }
+
+// Слушатель событий для кнопок счетчиков
+for (let i = 0; i < products.length; i++) {
+    products[i].btnMinus.addEventListener('click', () => {
+        decrementProguct(i);
+        // Установить новое значение счетчика
+        setProductCounter(i); 
+        // Установить новое значение цен
+        setPrices();
+        // Обновить значения цен, доставки, кнопки заказа
+        updateBasket();
+    });
+    products[i].btnPlus.addEventListener('click', () => {
+        incrementProguct(i);
+        // Установить новое значение счетчика
+        setProductCounter(i); 
+        // Установить новое значение цен
+        setPrices();
+        // Обновить значения цен, доставки, кнопки заказа
+        updateBasket();
+    });
+}
+
+// Функции =================================================
 
 // Функция. Изменяет состав корзины в доставке.
 // Устанавливает или удаляет товары из доставки в соответствии с
 // выбором из корзины (checkboxes)
 function changeDeliveryBasket() {
-    if (checkboxes[0].checked || checkboxes[1].checked || checkboxes[2].checked) {
-        htmlDeliveryBox1.classList.remove('hide');
-        htmlDeliveryDate1.classList.remove('hide');
-    } else {
-        htmlDeliveryBox1.classList.add('hide');
-        htmlDeliveryDate1.classList.add('hide');
-        htmlDeliveryBox2.classList.add('hide');
-        htmlDeliveryDate2.classList.add('hide');
+    // удаление предыдущих элементов
+    for (let i = 0; i < counterDeliveryBoxes; i++) {
+        document.querySelector(`#delivery-date-${i}`).remove();
+        document.querySelector(`#delivery-box-${i}`).remove();
     }
 
-    if (checkboxes[0].checked) {
-        htmlDeliveryProduct1.classList.remove('hide');
-    } else {
-        htmlDeliveryProduct1.classList.add('hide');
-    }
+    // Сброс счетчика доставок
+    counterDeliveryBoxes = 0;
 
-    if (checkboxes[1].checked) {
-        htmlDeliveryBox2.classList.remove('hide');
-        htmlDeliveryDate2.classList.remove('hide');
-        htmlDeliveryProduct21.classList.remove('hide');
-        htmlDeliveryProduct22.classList.remove('hide');
-    } else {
-        htmlDeliveryBox2.classList.add('hide');
-        htmlDeliveryDate2.classList.add('hide');
-        htmlDeliveryProduct21.classList.add('hide');
-        htmlDeliveryProduct22.classList.add('hide');
-    }
-
-    if (checkboxes[2].checked) {
-        htmlDeliveryProduct3.classList.remove('hide');
-    } else {
-        htmlDeliveryProduct3.classList.add('hide');
-    }
+    for (let i = 0; i < products.length; i++) {
+        if (checkboxes[i].checked) {
+            showProductInDelivery(i);
+        }
+    } 
 } 
+
+function showProductInDelivery(ind) {
+    const deliveries = Math.ceil(products[ind].counter / 184);
+
+    for (let i = 0; i < deliveries; i++) {
+        
+        const productInDelivery = document.createElement('div');
+        productInDelivery.classList.add('image-box', 'p-relative');
+        productInDelivery.innerHTML = `<img style="height: 100%;" src="./images/product_${ind + 1}.png">`
+        if (products[ind].counter > 1) {
+            productInDelivery.innerHTML += `<div class="quantity quantity-product">
+                ${(i === deliveries - 1) 
+                    ? (products[ind].counter - 184 * (deliveries - 1)) 
+                    : 184}
+            </div>`;
+        } 
+        
+        if (counterDeliveryBoxes < i + 1) {
+            addDateDelivery(i);
+            addBoxDelivery(i);
+        }
+        const box = document.querySelector(`#delivery-box-${i}`);
+
+        box.append(productInDelivery);
+    }
+}
+
+function addDateDelivery(ind) {
+    const deliveryContainer = document.querySelector('#delivery-container');
+    // Даты доставки
+    const datesDelivery = ['5—6 февраля', '7—8 февраля']; 
+    // Создание блока с датой доставки
+    const date = document.createElement('span');
+    date.classList.add('delivery-header', 'mobile-mb-12');
+    date.id = `delivery-date-${ind}`;
+    date.innerHTML = datesDelivery[ind];
+    deliveryContainer.append(date);
+
+    counterDeliveryBoxes++;
+}
+
+function addBoxDelivery(ind) {
+    const deliveryContainer = document.querySelector('#delivery-container');
+    // Создание блока с товарами доставки
+    const box = document.createElement('div');
+    box.classList.add('images-container', 'mobile-mb-24');
+    box.id = `delivery-box-${ind}`;
+
+    deliveryContainer.append(box);
+}
+
 
 // Изменить в DOM значение в кнопке заказа
 function changeOrderButton() {
@@ -144,20 +226,19 @@ function changeOrderButton() {
 // (для НЕРЕАЛИЗОВАННОГО случая, если мы будем менять количество товаров)
 function setPrices() {
     for (let i = 0; i < 3; i++) {
-        setNumber(htmlPrices[i], prices[i]);
-        setNumber(htmlOldPrices[i], oldPrices[i]);
+        setNumber(htmlPrices[i], getNewPrice(products[i]) );
+        setNumber(htmlOldPrices[i], getOldPrice(products[i]) );
     }
 }
 
 // Установка в DOM итоговых цен и скидки
 function setPricesSum() {
-    priceSum = calculateSum(prices);
-    oldPriceSum = calculateSum(oldPrices);
-    discountSum = oldPriceSum - priceSum;
+    const [oldPriceSum, newPriceSum] = calculateSum();
+    const discountSum = oldPriceSum - newPriceSum;
 
-    setNumber(htmlPriceSum, priceSum);
+    setNumber(htmlPriceSum, newPriceSum);
     setNumber(htmlOldPriceSum, oldPriceSum);
-    setNumber(htmlDiscountSum, discountSum)
+    setNumber(htmlDiscountSum, discountSum);
 }
 
 // Добавление пробелов через каждые три символа в строке из цифр
@@ -188,14 +269,16 @@ function setNumber(htmlElem, numElem) {
 
 // Вычисление суммы цены выбранных соваров
 // Возвращает сумму товаров, где выбран checkbox
-function calculateSum(pricesArr) {
-    let sum = 0;
+function calculateSum() {
+    let oldPriceSum = 0;
+    let newPriceSum = 0;
     for (let i = 0; i < 3; i ++) {
         if (checkboxes[i].checked) {
-            sum += pricesArr[i];
+            oldPriceSum += getOldPrice(products[i]);
+            newPriceSum += getNewPrice(products[i]);
         }
     }
-    return sum;
+    return [oldPriceSum, newPriceSum];
 }
 
 // Проверка, все ли из 3-x checkboxes выбраны
@@ -204,4 +287,90 @@ function checkCheckboxs() {
         return true;
     }
     return false;
+}
+
+// Функция: увеличивает счетчик продукта с индексом ind
+// Принимает: индекс продукта
+// Изменияет: Значение счетчика продукта в products
+function incrementProguct(ind) {
+    if (products[ind].maxQuantity > products[ind].counter) {
+        products[ind].counter++;
+    }
+} 
+
+// Функция: уменьшает счетчик продукта с индексом ind
+// Принимает: индекс продукта
+// Изменияет: Значение счетчика продукта в products
+function decrementProguct(ind) {
+    if (products[ind].counter > 0) {
+        products[ind].counter--;
+    }
+} 
+
+// Функция для установки значений счетчиков и состояний их кнопок
+// Принимает массив индексов продуктов
+// Изменияет: Счетчик продукта в DOM, финальную цену в DOM, суммы цен в DOM,
+// кнопки счетчиков
+function setProductCounter(ind) {
+    products[ind].inputCounter.value = products[ind].counter;
+    if (products[ind].maxQuantity === products[ind].counter) {
+        setDisabled(ind, 'Plus');
+        showMessageLimit(ind);
+    } else if (products[ind].btnPlus.disabled) {
+        removeDisabled(ind, 'Plus');
+        hideMessageLimit(ind);
+    } 
+
+    if (products[ind].counter === 1) {
+        setDisabled(ind, 'Minus');
+    } else if (products[ind].btnMinus.disabled) {
+        removeDisabled(ind, 'Minus');
+    } 
+
+}
+
+// Функция для установка кнопки счетчика в неактивное состояние
+// Принимает: индекс продукта, тип кнопки
+function setDisabled(ind, typeBtn) {
+    products[ind]['btn' + typeBtn].disabled = true; 
+}
+
+// Функция для удаление неактивного состояния с кнопки счетчика
+// Принимает: индекс продукта, тип кнопки
+function removeDisabled(ind, typeBtn) {
+    products[ind]['btn' + typeBtn].disabled = false; 
+}
+
+// Функция для возвращения старой цены продукта
+// Принимает: объет продукта
+function getOldPrice(product) {
+    return Math.round(product.counter * product.oldPriceOne);
+}
+
+// Функция для возвращения новой цены (с учетом скидки)
+// Принимает: объет продукта
+function getNewPrice(product) {
+    return Math.round(product.counter * (product.oldPriceOne -  product.oldPriceOne * product.discount));
+}
+
+// Функция для отображение сообщения с лимитом товаров
+// Принимает: индекс товра
+function showMessageLimit(ind) {
+    const limiter = document.querySelector(`#limiter-${ind + 1}`);
+    limiter.classList.add('show');
+}
+
+// Функция для скрытия сообщения с лимитом товаров
+// Принимает: индекс товра
+function hideMessageLimit(ind) {
+    const limiter = document.querySelector(`#limiter-${ind + 1}`);
+    limiter.classList.remove('show');
+}
+
+// Функция для изменения значений в DOM:
+// изменяет итоговые цены, кнопку заказа, блок с доставкой
+function updateBasket() {
+    setPricesSum();
+    changeOrderButton();
+    changeDeliveryBasket();
 }

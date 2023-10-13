@@ -1,10 +1,11 @@
-@media(max-width: 950px) {
-    .list-fields {
-        flex-direction: column;
+@media(max-width: 1200px) {
+    .right-item {
+        width: 303px;
+        min-width: 303px;
     }
 }
 
-@media(max-width: 900px) {
+@media(max-width: 1000px) {
     .content-container {
         flex-direction: column;
         margin-top: 24px;
@@ -17,6 +18,22 @@
     .right-item {
         width: 100%;
         margin-top: 0;
+    }
+    
+    .basket-elem .header {
+        margin-bottom: 8px;
+    }
+
+    .rejection-info {
+        margin-left: 8px;
+        margin-right: 8px;
+        margin-top: 0;
+    }
+}
+
+@media(max-width: 950px) {
+    .list-fields {
+        flex-direction: column;
     }
 }
 
@@ -266,6 +283,10 @@
 
     .list-fields {
         gap: 16px;
+    }
+
+    .list-fields .field {
+        height: 56px;
     }
 
     .recipient {

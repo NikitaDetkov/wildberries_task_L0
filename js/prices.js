@@ -169,12 +169,14 @@ function showProductInDelivery(ind) {
         
         const productInDelivery = document.createElement('div');
         productInDelivery.classList.add('image-box', 'p-relative');
-        productInDelivery.innerHTML = `<img style="height: 100%;" src="./images/product_${ind + 1}.png">`
-        if (products[ind].counter > 1) {
+        productInDelivery.innerHTML = `<img style="height: 100%;" src="./images/product_${ind + 1}.png">`;
+
+        const numProducts = (i === deliveries - 1) 
+            ? (products[ind].counter - 184 * (deliveries - 1)) 
+            : 184;
+        if (numProducts > 1) {
             productInDelivery.innerHTML += `<div class="quantity quantity-product">
-                ${(i === deliveries - 1) 
-                    ? (products[ind].counter - 184 * (deliveries - 1)) 
-                    : 184}
+                ${numProducts}
             </div>`;
         } 
         
